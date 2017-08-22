@@ -11,8 +11,14 @@ class Api::SessionsController < ApplicationController
   end
 
   def destroy
-    logout
-    redirect_to :new
+    @user = current_user
+
+    if @user
+      logout(@user)
+      render json: []
+    else
+      render json: ['No One logged in!!']
+    end
   end
 
   private
