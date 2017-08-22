@@ -1,8 +1,4 @@
-class SessionController < ApplicationController
-
-  def new
-    @user = User.new
-  end
+class Api::SessionsController < ApplicationController
 
   def create
     @user = User.find_by_credentials(user_params)
@@ -10,8 +6,7 @@ class SessionController < ApplicationController
       login(@user)
       render json: @user
     else
-      flash[:errors] = ['Invalid Credentials, try again']
-      render :new
+      render json: ['Invalid Credentials, try again'], status: 422
     end
   end
 
