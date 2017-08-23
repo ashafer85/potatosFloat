@@ -28,7 +28,6 @@ class NavBar extends React.Component {
         </div>
       );
     } else {
-      debugger
       return(
         <div className='navBar'>
           <div className='logo'>potatosfloat</div>
