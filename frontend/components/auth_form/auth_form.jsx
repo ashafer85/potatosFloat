@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { merge } from 'lodash';
 import { Link } from 'react-router-dom';
-import AuthErrors from './auth_errors';
 
 class AuthForm extends React.Component {
 
