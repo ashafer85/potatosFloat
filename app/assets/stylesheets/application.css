@@ -58,23 +58,60 @@ li {
   margin: 0px;
 }
 
-input:focus {
+/*input:focus {
   outline: none;
+}*/
+
+.authFull {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9990;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .authFormContainer {
-  width: 100%;
-  height: 300px;
-  background-color: lightgray;
+  top: 40px;
+  width: 40%;
+  height: 80%;
+  border-radius: 10px;
+  background-color: white;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  /*align-items: center;*/
+  /*justify-content: center;*/
+}
+.authFormHeading {
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.authFormHeading > * {
+  padding: 20px;
+  border-radius: 10px;
+}
+.authFormHeading > a {
+  text-decoration: none;
+  color: black;
+}
+
+.title {
+  padding-left: 40px;
+
+}
+.exit {
+  background-color: white;
 }
 
 .authForm {
-  width: 40%;
-  background-color: white;
-  border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;

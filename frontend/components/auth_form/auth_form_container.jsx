@@ -28,10 +28,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     return {
       processForm: (user) => dispatch(login(user))
     };
-  // } else if (ownProps.location.pathname === '/logout') {
-  //   return {
-  //     logout: () => dispatch(logout())
-  //   };
+  } else if (ownProps.location.pathname === '/logout') {
+    return {
+      logout: () => dispatch(logout())
+    };
   } else {
     return {
       submitForm: 'oh no!!!'
