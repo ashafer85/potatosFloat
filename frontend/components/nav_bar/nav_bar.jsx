@@ -13,15 +13,34 @@ class NavBar extends React.Component {
   }
 
   render () {
-    return(
-      <div className='navBar'>
-        <div className='logo'>potatosfloat</div>
-        <ul className='auth'>
-          <li className='join'>Join</li>
-          <li className='login'>Log In</li>
-        </ul>
-      </div>
-    );
+    if (this.props.currentUser === null) {
+      return(
+        <div className='navBar'>
+          <div className='logo'>potatosfloat</div>
+          <div className='auth'>
+            <li className='join'>
+              <Link to='/signup'> Join </Link>
+            </li>
+            <li className='login'>
+              <Link to='/login'> Log In </Link>
+            </li>
+          </div>
+        </div>
+      );
+    } else {
+      return(
+        <div className='navBar'>
+          <div className='logo'>potatosfloat</div>
+          <ul className='auth'>
+            <li className='join'>Hello {this.props.currentUser.username}</li>
+            <li className='logout'>
+              <button onClick={ this.props.logout }> Log Out </button>
+            </li>
+          </ul>
+        </div>
+      );
+    }
+
   }
 
 }

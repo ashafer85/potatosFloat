@@ -17,6 +17,7 @@
 .navBar {
   background-color: white;
   border: 1px solid gray;
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -53,4 +54,40 @@ li {
   background-color: lightgray;
   margin: 10px 30px;
   padding: 10px 20px;
+  font-size: 30px;
+  margin: 0px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.authFormContainer {
+  width: 100%;
+  height: 300px;
+  background-color: lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.authForm {
+  width: 40%;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.authFormInput {
+  margin: 10px;
+  padding: 2px;
+  width: 80%;
+}
+.authFormSubmit {
+  margin: 10px;
+  padding: 2px;
+  width: 80%;
+  height: 20px;
 }

@@ -8,13 +8,17 @@ const _defaultSession = {
 
 export const sessionReducer = ( state = _defaultSession, action) => {
   Object.freeze(state);
+
   switch(action.type) {
+
     case RECEIVE_CURRENT_USER:
       const currentUser = action.currentUser;
       return merge({}, state, { currentUser });
+
     case RECEIVE_ERRORS:
       const errors = action.errors;
-      return merge({}, state, { errors })
+      return merge({}, state, { errors });
+
     default:
       return state;
   };

@@ -17,13 +17,13 @@ class ApplicationController < ActionController::Base
   end
 
   def logout()
-    @current_user.try(:reset_token!)
+    current_user.try(:reset_token!)
     session[:session_token] = nil
   end
 
-  # def ensure_logged_in
-  #   redirect unless logged_in?
-  #
-  # end
+  def ensure_logged_in
+    redirect unless logged_in?
+
+  end
 
 end
