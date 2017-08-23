@@ -1,0 +1,43 @@
+.navBar {
+  background-color: white;
+  border: 1px solid gray;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.auth {
+  background-color: lightgray;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0px;
+  margin: 0px;
+}
+
+.join, .login {
+  margin: 15px;
+  padding: 5px 20px;
+  background-color: white;
+  color: #287fb8;
+  border: 1px solid #287fb8;
+  border-radius: 5px;
+}
+
+.join {
+  background-color: #287fb8;
+  color: white;
+}
+
+.logo {
+  color: #db6530;
+  background-color: lightgray;
+  margin: 10px 30px;
+  padding: 10px 20px;
+  font-size: 30px;
+  margin: 0px;
+}

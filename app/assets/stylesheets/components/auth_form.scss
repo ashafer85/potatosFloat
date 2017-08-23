@@ -46,6 +46,14 @@
 .exit {
   background-color: white;
 }
+.exit:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
+.authErrors > li {
+
+}
+
 
 .authForm {
   display: flex;
