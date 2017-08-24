@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 class UserDrop extends React.Component {
 
-  constructor() {
+  constructor(props) {
     super(props);
   }
 
@@ -13,11 +13,12 @@ class UserDrop extends React.Component {
     return(
       <div className='userDrop'>
         <ul className='userDroplist'>
-          <li>List Item 1</li>
-          <li>List Item 2</li>
-          <li>List Item 3</li>
-          <li>
-            <Link to='/logout'>Log Out</Link>
+          <li className='userDropListItemFirst'>Find Spots</li>
+          <li>See Spots</li>
+          <li>See Hosts</li>
+          <li className='bonusUserDrop'>(maybe messages)</li>
+          <li className='userDropListItemLast'>
+            <button onClick={this.props.logout}>Log Out</button>
           </li>
         </ul>
       </div>
@@ -25,3 +26,5 @@ class UserDrop extends React.Component {
   }
 
 }
+
+export default UserDrop;

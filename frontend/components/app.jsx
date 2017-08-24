@@ -9,10 +9,15 @@ const App = () => {
         <header>
           <NavBarContainer />
         </header>
-        <Switch>
-          <Route path='/signup' component={ AuthFormContainer } />
-          <Route path='/login' component={ AuthFormContainer } />
-        </Switch>
+        <body>
+          <Switch>
+            <Route path='/signup' component={ AuthFormContainer } />
+            <Route path='/login' component={ AuthFormContainer } />
+          </Switch>
+        </body>
+        <footer>
+
+        </footer>
       </div>
   );
 };

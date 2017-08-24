@@ -2,6 +2,9 @@ New account creation, login, and guest/demo login
 A production README, replacing this README (NB: check out the sample production README -- you'll write this later)
 Hosting on Heroku
 
+hosting on Heroku
+Auth
+
 Feature 1 - Spots
   Adequate styling
   Smooth, bug-free navigation

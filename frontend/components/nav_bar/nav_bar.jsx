@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import UserDrop from './user_drop';
+// import { swithcUserDropStatus } from '../../actions/ui_actions';
 
 class NavBar extends React.Component {
 
@@ -11,9 +12,21 @@ class NavBar extends React.Component {
       username: '',
       password: ''
     };
+    this.handleDropChange = this.handleDropChange.bind(this)
+  }
+
+  handleDropChange() {
+    this.props.switchUserDropStatus(this.props.userDropStatus)
   }
 
   render () {
+    let dropIt;
+    if (this.props.userDropStatus === false) {
+      dropIt = null;
+    } else {
+      dropIt = <UserDrop logout={this.props.logout}/>;
+    }
+
     if (this.props.currentUser === null) {
       return(
         <div className='navBar'>
@@ -33,14 +46,15 @@ class NavBar extends React.Component {
         <div className='navBar'>
           <div className='logo'>potatosfloat</div>
           <ul className='auth'>
-            <li className='join'>Hello {this.props.currentUser.username}</li>
-            <li className='logout'>
-              <button onClick={ this.props.logout }> Log Out </button>
-            </li>
-            <li onClick>
-              <img alt="Menu" className="person" src="https://tcdn.couchsurfing.com/_BA5QbwEuOVerKa3--MgMnk3Guw=/40x40/smart/https://ht-cdn.couchsurfing.com/assets/profile-picture-placeholder.png" title="Menu" />
+            <li className='navGreeting'>Aloha_ {this.props.currentUser.username}</li>
+            <li onClick={this.handleDropChange}>
+              <img alt="Menu"
+                className="person"
+                src="https://tcdn.couchsurfing.com/_BA5QbwEuOVerKa3--MgMnk3Guw=/40x40/smart/https://ht-cdn.couchsurfing.com/assets/profile-picture-placeholder.png"
+                title="Menu" />
             </li>
           </ul>
+          { dropIt }
         </div>
       );
     }

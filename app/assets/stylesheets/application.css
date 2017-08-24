@@ -18,3 +18,14 @@
 /*input:focus {
   outline: none;
 }*/
+
+body {
+  min-width: 100%;
+  min-height: 500px;
+  background-color: #f1efea;
+}
+
+footer {
+  min-width: 100%;
+  min-height: 50px;
+}

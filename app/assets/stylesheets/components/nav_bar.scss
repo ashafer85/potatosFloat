@@ -4,12 +4,10 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: space-between;
 }
 
 .auth {
-  background-color: lightgray;
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -17,6 +15,7 @@
   justify-content: space-around;
   padding: 0px;
   margin: 0px;
+  min-width: 220px;
 }
 
 .join, .login {
@@ -35,12 +34,28 @@
 
 .logo {
   color: #db6530;
-  background-color: lightgray;
+  font-family: 'Kaushan Script', cursive;
   margin: 10px 30px;
   padding: 10px 20px;
   font-size: 30px;
   margin: 0px;
 }
+
+.navGreeting {
+  font-family: 'Caveat Brush', cursive;
+  color: #a0aab8;
+  padding: 0px;
+  margin: 0px;
+  margin-top: 12px;
+}
+
 .person {
   border-radius: 50%;
+  margin-right: 20px;
+  height: 44px;
+  width: 44px;
+}
+
+.person:hover {
+  cursor: pointer;
 }

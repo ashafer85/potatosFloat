@@ -32,14 +32,14 @@ class AuthForm extends React.Component {
   }
 
   handleChange(e) {
-    this.state[e.target.name] = e.target.value;
-    this.setState(this.state);
+    const newState = { [e.target.name]: e.target.value }
+    this.setState(newState);
   }
 
   render () {
     let allErrors = this.props.errors.map((el, idx) => {
       return(
-        <li key={idx}> <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> {el} </li>
+        <li key={idx}> <i className="fa fa-exclamation-triangle" aria-hidden="true"></i> {el} </li>
       )
     });
 
