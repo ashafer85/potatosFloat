@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
+import UserDrop from './user_drop';
 
 class NavBar extends React.Component {
 
@@ -35,6 +36,9 @@ class NavBar extends React.Component {
             <li className='join'>Hello {this.props.currentUser.username}</li>
             <li className='logout'>
               <button onClick={ this.props.logout }> Log Out </button>
+            </li>
+            <li onClick>
+              <img alt="Menu" className="person" src="https://tcdn.couchsurfing.com/_BA5QbwEuOVerKa3--MgMnk3Guw=/40x40/smart/https://ht-cdn.couchsurfing.com/assets/profile-picture-placeholder.png" title="Menu" />
             </li>
           </ul>
         </div>

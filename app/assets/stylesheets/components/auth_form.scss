@@ -30,30 +30,35 @@
   justify-content: space-between;
 }
 
-.authFormHeading > * {
+.title {
   padding: 20px;
+  margin-bottom: 30px;
   border-radius: 10px;
 }
-.authFormHeading > a {
+.exit {
   text-decoration: none;
-  color: black;
+  color: gray;
+  background-color: white;
+  padding: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 40px;
 }
 
 .title {
   padding-left: 40px;
 
 }
-.exit {
-  background-color: white;
-}
+
 .exit:hover {
-  background-color: lightgray;
+
+  border-radius: 6px;
   cursor: pointer;
+  color: black;
 }
 .authErrors > li {
 
 }
-
 
 .authForm {
   display: flex;
@@ -71,4 +76,15 @@
   padding: 2px;
   width: 80%;
   height: 20px;
+}
+
+.authErrors {
+  align-items: center;
+  justify-content: center;
+}
+.authErrors > * {
+  background-color: #f1ced0;
+  color: #8f6769;
+  padding: 15px;
+
 }
