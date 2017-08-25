@@ -9,18 +9,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .authFormContainer {
+  position: absolute;
   top: 40px;
   width: 40%;
+  min-width: 290px;
+  max-width: 444px;
   height: 80%;
+  min-height: 444px;
+  max-height: 800px;
   border-radius: 10px;
   background-color: white;
   display: flex;
   flex-direction: column;
-  /*align-items: center;*/
-  /*justify-content: center;*/
 }
 .authFormHeading {
   width: 100%;
@@ -32,9 +36,10 @@
 
 .title {
   padding: 20px;
-  padding-left: 40px;
-  margin-bottom: 30px;
+  padding-left: 30px;
   border-radius: 10px;
+  font-size: 18px;
+  color: #4a5d70;
 }
 .exit {
   text-decoration: none;
@@ -43,7 +48,7 @@
   padding: 10px;
   margin-right: 10px;
   margin-top: 10px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .title {
@@ -52,31 +57,63 @@
 }
 
 .exit:hover {
-
   border-radius: 6px;
   cursor: pointer;
   color: black;
-}
-.authErrors > li {
-
 }
 
 .authForm {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: 'Ubuntu', sans-serif;;
 }
 
 .authFormInput {
   margin: 10px;
-  padding: 2px;
   width: 80%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #e1e2e4;
+  border-radius: 8px;
 }
 .authFormSubmit {
   margin: 10px;
-  padding: 2px;
   width: 80%;
   height: 20px;
+  padding: 10px;
+  color: white;
+  background-color: #287fb8;
+  border: 1px solid #287fb8;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.switchAuthForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.authFormOption {
+  font-size: 16px;
+  color: #6a6f77;
+  padding: 20px;
+  font-weight: lighter;
+}
+.authFormSwitchItem {
+  padding: 10px 50px;
+  background-color: white;
+  color: #287fb8;
+  border: 1px solid #287fb8;
+  border-radius: 5px;
+}
+.authFormSwitchItem:hover {
+  background-color: #e1e2e4;
+  cursor: pointer;
 }
 
 .authErrors {
@@ -87,5 +124,4 @@
   background-color: #f1ced0;
   color: #8f6769;
   padding: 15px;
-
 }

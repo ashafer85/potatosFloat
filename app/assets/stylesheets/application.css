@@ -29,9 +29,3 @@ footer {
   min-width: 100%;
   min-height: 50px;
 }
-
-.splashFrontPage {
-  width: 90%;
-  min-height: 600px
-  background-image: image-url('splash_image_01.jpg');
-}

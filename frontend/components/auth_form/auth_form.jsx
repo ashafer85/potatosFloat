@@ -42,24 +42,25 @@ class AuthForm extends React.Component {
         <li key={idx}> <i className="fa fa-exclamation-triangle" aria-hidden="true"></i> {el} </li>
       )
     });
+
     let switchAuthForm;
-    let topMessage;
+    let authFormTitle;
     if (this.props.formType === '/login') {
-      topMessage = 'Log in to PotatosFloat';
+      authFormTitle = 'Log in to PotatosFloat';
       switchAuthForm =
         <ul className='switchAuthForm'>
-          <li>Don't have an account?</li>
-          <li>
-            <Link to='/signup'> Join Now </Link>
+          <li className='authFormOption'>Don't have an account?</li>
+          <li className='authFormSwitchItem'>
+            <Link to='/signup' className='authFormSwitchLink'> Join Now </Link>
           </li>
         </ul>;
     } else {
-      topMessage = 'Join PotatosFloat for free';
+      authFormTitle = 'Join PotatosFloat for free';
       switchAuthForm =
         <ul className='switchAuthForm'>
-          <li>Already a member?</li>
-          <li>
-            <Link to='/login'> Log In </Link>
+          <li className='authFormOption'>Already a member?</li>
+          <li className='authFormSwitchItem'>
+            <Link to='/login' className='authFormSwitchLink'> Log In </Link>
           </li>
         </ul>;
     }
@@ -68,7 +69,7 @@ class AuthForm extends React.Component {
       <div className='authFull'>
         <div className='authFormContainer'>
           <div className='authFormHeading'>
-            <div className='title'>{topMessage}</div>
+            <div className='title'>{authFormTitle}</div>
             <Link to='/' className='exit'>
               <i className="fa fa-times" aria-hidden='true'>
               </i>
