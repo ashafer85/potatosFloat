@@ -45,8 +45,10 @@ class AuthForm extends React.Component {
 
     let switchAuthForm;
     let authFormTitle;
+    let submitThis;
     if (this.props.formType === '/login') {
       authFormTitle = 'Log in to PotatosFloat';
+      submitThis = 'Log In';
       switchAuthForm =
         <ul className='switchAuthForm'>
           <li className='authFormOption'>Don't have an account?</li>
@@ -56,6 +58,7 @@ class AuthForm extends React.Component {
         </ul>;
     } else {
       authFormTitle = 'Join PotatosFloat for free';
+      submitThis = 'Join with Username';
       switchAuthForm =
         <ul className='switchAuthForm'>
           <li className='authFormOption'>Already a member?</li>
@@ -93,7 +96,7 @@ class AuthForm extends React.Component {
                 onChange={this.handleChange}/>
               <input className='authFormSubmit'
                 type='submit'
-                value='Join with Username'/>
+                value={submitThis}/>
           </form>
           { switchAuthForm }
         </div>
