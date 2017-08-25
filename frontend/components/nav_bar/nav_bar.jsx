@@ -33,10 +33,10 @@ class NavBar extends React.Component {
           <div className='logo'>potatosfloat</div>
           <div className='auth'>
             <li className='join'>
-              <Link to='/signup'> Join </Link>
+              <Link className='joinLink' to='/signup'> Join </Link>
             </li>
             <li className='login'>
-              <Link to='/login'> Log In </Link>
+              <Link className='loginLink' to='/login'> Log In </Link>
             </li>
           </div>
         </div>
@@ -45,7 +45,7 @@ class NavBar extends React.Component {
       return(
         <div className='navBar'>
           <div className='logo'>potatosfloat</div>
-          <ul className='auth'>
+          <ul className='userNav'>
             <li className='navGreeting'>Aloha_ {this.props.currentUser.username}</li>
             <li onClick={this.handleDropChange}>
               <img alt="Menu"

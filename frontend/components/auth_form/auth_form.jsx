@@ -42,12 +42,33 @@ class AuthForm extends React.Component {
         <li key={idx}> <i className="fa fa-exclamation-triangle" aria-hidden="true"></i> {el} </li>
       )
     });
+    let switchAuthForm;
+    let topMessage;
+    if (this.props.formType === '/login') {
+      topMessage = 'Log in to PotatosFloat';
+      switchAuthForm =
+        <ul className='switchAuthForm'>
+          <li>Don't have an account?</li>
+          <li>
+            <Link to='/signup'> Join Now </Link>
+          </li>
+        </ul>;
+    } else {
+      topMessage = 'Join PotatosFloat for free';
+      switchAuthForm =
+        <ul className='switchAuthForm'>
+          <li>Already a member?</li>
+          <li>
+            <Link to='/login'> Log In </Link>
+          </li>
+        </ul>;
+    }
 
     return(
       <div className='authFull'>
         <div className='authFormContainer'>
           <div className='authFormHeading'>
-            <div className='title'>Join PotatosFloat for free</div>
+            <div className='title'>{topMessage}</div>
             <Link to='/' className='exit'>
               <i className="fa fa-times" aria-hidden='true'>
               </i>
@@ -73,6 +94,7 @@ class AuthForm extends React.Component {
                 type='submit'
                 value='Join with Username'/>
           </form>
+          { switchAuthForm }
         </div>
       </div>
     );

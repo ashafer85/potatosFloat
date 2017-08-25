@@ -10,13 +10,17 @@ const App = () => {
           <NavBarContainer />
         </header>
         <body>
+          <div>Top of body</div>
           <Switch>
             <Route path='/signup' component={ AuthFormContainer } />
             <Route path='/login' component={ AuthFormContainer } />
           </Switch>
+
+          <div className='splashFrontPage'> </div>
+          <div>bottom of bosy (or at least last element)</div>
         </body>
         <footer>
-
+          ...there goes the footer
         </footer>
       </div>
   );

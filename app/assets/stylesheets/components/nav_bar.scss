@@ -15,7 +15,8 @@
   justify-content: space-around;
   padding: 0px;
   margin: 0px;
-  min-width: 220px;
+  width: 45%;
+  min-width: 322px;
 }
 
 .join, .login {
@@ -25,11 +26,27 @@
   color: #287fb8;
   border: 1px solid #287fb8;
   border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Nunito', sans-serif;
 }
-
 .join {
+  width: 65%;
+  min-width: 60px;
+  max-width: 180px;
   background-color: #287fb8;
   color: white;
+}
+.joinLink {
+  width: 100%;
+  align-content: center;
+  justify-content: center;
+}
+
+.login {
+  width: 33%;
+  padding: 5px 10px;
 }
 
 .logo {
@@ -41,6 +58,17 @@
   margin: 0px;
 }
 
+.userNav {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0px;
+  margin: 0px;
+  width: 22%;
+  min-width: 122px;
+}
 .navGreeting {
   font-family: 'Caveat Brush', cursive;
   color: #a0aab8;
