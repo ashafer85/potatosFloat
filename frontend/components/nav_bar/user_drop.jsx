@@ -1,17 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
+import { enhanceWithClickOutside } from 'react-click-outside';
 
 class UserDrop extends React.Component {
 
   constructor(props) {
     super(props);
+    debugger
   }
 
   render() {
-
+    debugger
     return(
-      <div className='userDrop'>
+      <div className='userDrop' >
         <ul className='userDroplist'>
           <li className='userDropListItemFirst'>Find Spots</li>
           <li>See Spots</li>

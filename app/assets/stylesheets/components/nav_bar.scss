@@ -8,45 +8,33 @@
 }
 
 .auth {
-  list-style: none;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
-  padding: 0px;
+  justify-content: space-between;
+  padding: 0px;;
   margin: 0px;
-  width: 500px;
-  min-width: 322px;
+  width: 280px;
 }
 
-.join, .login {
-  margin: 15px;
-  padding: 5px 20px;
+.joinLink, .loginLink {
   background-color: white;
   color: #287fb8;
   border: 1px solid #287fb8;
   border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-right: 20px;
+  padding: 5px 20px;
+  text-align: center;
   font-family: 'Nunito', sans-serif;
 }
-.join {
+
+.joinLink {
   width: 100px;
   min-width: 60px;
-  max-width: 180px;
+  margin: 0px;
+  margin-left: 20px;
   background-color: #287fb8;
   color: white;
-}
-.joinLink {
-  width: 100%;
-  align-content: center;
-  justify-content: center;
-}
-
-.login {
-  width: 100px;
-  padding: 5px 10px;
 }
 
 .logo {

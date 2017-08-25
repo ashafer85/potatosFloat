@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import UserDrop from './user_drop';
+import LandingPage from '../landing_page/landing_page';
 // import { swithcUserDropStatus } from '../../actions/ui_actions';
 
 class NavBar extends React.Component {
@@ -29,22 +30,24 @@ class NavBar extends React.Component {
 
     if (this.props.currentUser === null) {
       return(
-        <div className='navBar'>
-          <div className='logo'>potatosfloat</div>
-          <div className='auth'>
-            <li className='join'>
+        <main>
+          <div className='navBar'>
+            <div className='logo'>potatosfloat</div>
+
+            <div className='auth'>
               <Link className='joinLink' to='/signup'> Join </Link>
-            </li>
-            <li className='login'>
               <Link className='loginLink' to='/login'> Log In </Link>
-            </li>
+            </div>
           </div>
-        </div>
+          <LandingPage />
+        </main>
       );
     } else {
       return(
         <div className='navBar'>
+
           <div className='logo'>potatosfloat</div>
+
           <ul className='userNav'>
             <li className='navGreeting'>Aloha_ {this.props.currentUser.username}</li>
             <li onClick={this.handleDropChange}>
