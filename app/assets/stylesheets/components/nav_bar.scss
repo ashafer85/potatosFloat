@@ -2,39 +2,10 @@
   background-color: white;
   border: 1px solid gray;
   width: 100%;
+  min-width: 367px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-
-.auth {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0px;;
-  margin: 0px;
-  width: 280px;
-}
-
-.joinLink, .loginLink {
-  background-color: white;
-  color: #287fb8;
-  border: 1px solid #287fb8;
-  border-radius: 5px;
-  margin-right: 20px;
-  padding: 5px 20px;
-  text-align: center;
-  font-family: 'Nunito', sans-serif;
-}
-
-.joinLink {
-  width: 100px;
-  min-width: 60px;
-  margin: 0px;
-  margin-left: 20px;
-  background-color: #287fb8;
-  color: white;
 }
 
 .logo {
@@ -46,6 +17,39 @@
   margin: 0px;
 }
 
+.auth {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px;;
+  margin: 0px;
+  width: 280px;
+
+  .joinLink, .loginLink {
+    background-color: white;
+    color: #287fb8;
+    border: 1px solid #287fb8;
+    border-radius: 5px;
+    margin-right: 20px;
+    padding: 5px 20px;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  .joinLink {
+    width: 100px;
+    min-width: 60px;
+    margin: 0px;
+    margin-left: 20px;
+    background-color: #287fb8;
+    color: white;
+  }
+}
+
+
+
+
 .userNav {
   list-style: none;
   display: flex;
@@ -55,23 +59,24 @@
   padding: 0px;
   margin: 0px;
   width: 22%;
-  min-width: 122px;
-}
-.navGreeting {
-  font-family: 'Caveat Brush', cursive;
-  color: #a0aab8;
-  padding: 0px;
-  margin: 0px;
-  margin-top: 12px;
-}
+  min-width: 160px;
 
-.person {
-  border-radius: 50%;
-  margin-right: 20px;
-  height: 44px;
-  width: 44px;
-}
+  .navGreeting {
+    font-family: 'Caveat Brush', cursive;
+    color: #a0aab8;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 12px;
+  }
 
-.person:hover {
-  cursor: pointer;
+  .person {
+    border-radius: 50%;
+    margin-right: 20px;
+    height: 44px;
+    width: 44px;
+  }
+  .person:hover {
+    cursor: pointer;
+  }
+
 }

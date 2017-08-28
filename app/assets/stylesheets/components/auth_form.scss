@@ -16,6 +16,7 @@
   position: absolute;
   top: 40px;
   width: 40%;
+  z-index: 9991;
   min-width: 290px;
   max-width: 444px;
   height: 80%;
@@ -26,6 +27,40 @@
   display: flex;
   flex-direction: column;
 }
+.authExitTop {
+  position: absolute;
+  z-index: 9991;
+  top: 0px;
+  height: 39px;
+  width: 100%;
+}
+.authExitRight {
+  position: absolute;
+  z-index: 9991;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  min-width: 55px;
+  max-width: 55px;
+}
+.authExitBottom {
+  position: absolute;
+  z-index: 9991;
+  bottom: 0px;
+  max-height: 5px;
+  min-height: 5px;
+}
+.authExitLeft {
+  position: absolute;
+  z-index: 9991;
+  top: 0px;
+  height: 100%;
+  min-width: 55px;
+  max-width: 55px;
+}
+
+
+
 .authFormHeading {
   width: 100%;
   border-radius: 10px;
