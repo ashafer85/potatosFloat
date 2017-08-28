@@ -100,6 +100,10 @@ class AuthForm extends React.Component {
           </form>
           { switchAuthForm }
         </div>
+        <Link className='authExitTop' to='/'></Link>
+        <Link className='authExitRight' to='/'></Link>
+        <Link className='authExitBottom' to='/'></Link>
+        <Link className='authExitLeft' to='/'></Link>
       </div>
     );
   }
