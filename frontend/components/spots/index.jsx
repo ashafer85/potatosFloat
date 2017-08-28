@@ -15,20 +15,14 @@ class SpotsIndex extends React.Component {
   }
 
   render() {
-    debugger
     const allSpots = Object.keys(this.props.spots).map((key) => {
       return this.props.spots[key];
     })
 
-    debugger
     return(
       <div className='spotsIndexContainer'>
         <span className='spotsIndexHeader'>
           <h2> SPOTS: </h2>
-
-
-
-
         </span>
 
         <ul className='spotsIndex'>

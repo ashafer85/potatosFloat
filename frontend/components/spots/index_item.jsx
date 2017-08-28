@@ -3,7 +3,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const IndexItem = ({ spot }) => {
-  debugger
   return(
     <li className="spotsIndexItem">
         <div className='spotsIdxItemPic'> pic </div>
