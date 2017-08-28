@@ -3,24 +3,39 @@ import * as APIUtil from '../util/spots_api_util';
 
 import { fetchAllSpots } from '../util/spots_api_util';
 
-export const RECEIVE_SPOTS = 'RECEIVE_SPOTS';
-export const RECEIVE_SPOT = 'RECEIVE_SPOT';
+export const RECEIVE_ALL_SPOTS = 'RECEIVE_ALL_SPOTS';
+export const START_LOADING_ALL_SPOTS = 'START_LOADING_ALL_SPOTS';
+export const RECEIVE_ONE_SPOT = 'RECEIVE_ONE_SPOT';
+export const START_LOADING_SINGLE_SPOT = 'START_LOADING_SINGLE_SPOT';
 
-export const receiveSpots = (payload) => {
+
+export const receiveAllSpots = (payload) => {
   return {
-    type: RECEIVE_SPOTS,
-    payload
+    type: RECEIVE_ALL_SPOTS,
+    spots: payload
   };
 };
 
-export const receiveSpot = (payload) => {
+export const receiveOneSpot = (payload) => {
   return {
-    type: RECEIVE_SPOT,
-    payload
+    type: RECEIVE_ONE_SPOT,
+    spots: payload
   };
 };
 
 export const requestAllSpots = () => (dispatch) => {
+  // dispatch(startLoadingAllSpots);
   return APIUtil.fetchAllSpots()
-    .then( (spots) => dispatch(receiveAllSpots(spots)));
-}
+    .then( (payload) => dispatch(receiveAllSpots(payload)));
+};
+
+// export const startLoadingAllSpots = () => {
+//   return {
+//     type: START_LOADING_ALL_SPOTS
+//   };
+// };
+// export const startLoadingSpot = () => {
+//   return {
+//     type: START_LOADING_SINGLE_SPOT
+//   };
+// };

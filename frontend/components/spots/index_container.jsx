@@ -1,11 +1,13 @@
 
 import { connect } from 'react-redux';
 import { requestAllSpots } from '../../actions/spots_actions';
+import { selectAllSpots } from '../../reducers/selectors';
 import SpotsIndex from './index';
 
 const mapStateToProps = (state) => {
+  debugger
   return {
-    spots: state.spots
+    spots: selectAllSpots(state)
   };
 };
 
@@ -14,7 +16,6 @@ const mapDispatchToProps = (dispatch) => {
     requestAllSpots: () => dispatch(requestAllSpots())
   };
 };
-
 
 export default connect(
   mapStateToProps,

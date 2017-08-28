@@ -15,8 +15,8 @@ const App = () => {
           <Switch>
             <Route path='/signup' component={ AuthFormContainer } />
             <Route path='/login' component={ AuthFormContainer } />
-            <Route path='/api/spots' component={ SpotsIndexContainer }/>
           </Switch>
+          <Route path='/api/spots' component={ SpotsIndexContainer }/>
         </div>
 
         <FooterBar />

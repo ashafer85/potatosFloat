@@ -19,7 +19,7 @@
   outline: none;
 }*/
 
-body {
+.pfBody {
   min-width: 100%;
   min-height: 500px;
   background-color: #f1efea;

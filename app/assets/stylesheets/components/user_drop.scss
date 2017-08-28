@@ -7,44 +7,65 @@
   right: 20px;
   border-radius: 10px;
 
+  ul {
+    background-color: none;
+    padding: 0px;
+    min-width: 200px;
+    max-width: 388px;
+    border-radius: 10px;
+    border: 1px solid #a0aab8;
+    box-shadow: 10px 10px 5px rgba(160,170,184,0.1);
+    // padding-top: 5px;
+    .listItemFirst, .listItemHosts, .listItemLast, .bonusUserDrop {
+      background-color: white;
+      color: #b4b6b9;
+      padding: 12px 24px;
+      z-index: 9992;
+      border-style: solid;
+      border-color: #b4b6b9;
+      // margin: 33px;
+    }
+    .listItemSpots {
+      background-color: white;
+      color: #b4b6b9;
+      padding: 12px 24px;
+      z-index: 9992;
+      border-style: solid;
+      border-color: #b4b6b9;
+    }
+
+    .listItemFirst {
+      border-top-right-radius: 8px;
+      border-top-left-radius: 8px;
+    }
+    .listItemLast {
+      border-bottom-right-radius: 8px;
+      border-bottom-left-radius: 8px;
+      border-top: 1px solid #b4b6b9;
+    }
+    li:hover {
+      background-color: #e1e2e4;
+      color: #db6530;
+      cursor: pointer;
+    }
+
+  }
+
 }
 
-.userDrop > ul {
-  background-color: none;
-  padding: 0px;
-  min-width: 200px;
-  max-width: 388px;
-  border-radius: 10px;
-  border: 1px solid #a0aab8;
-  box-shadow: 10px 10px 5px rgba(160,170,184,0.1);
 
-  // padding-top: 5px;
-}
-
-.userDrop > ul > li {
-  background-color: white;
-  color: #b4b6b9;
-  padding: 12px 24px;
-  z-index: 9992;
-  border-style: solid;
-  border-color: #b4b6b9;
-  // margin: 33px;
-}
-.userDropListItemFirst {
-  border-top-right-radius: 8px;
-  border-top-left-radius: 8px;
-}
-.userDropListItemLast {
-  border-bottom-right-radius: 8px;
-  border-bottom-left-radius: 8px;
-  border-top: 1px solid #b4b6b9;
-}
-
-
-.userDrop > ul > li:hover {
-  background-color: #e1e2e4;
-  color: #db6530;
-  cursor: pointer;
-}
-
+// 
+// .linkToSpotsIndex {
+//   background-color: white;
+//   // color: #b4b6b9;
+//   z-index: 9993;
+//   padding: 12px 24px;
+//   width: inherit;
+//   height: inherit;
+//   text-align: left;
+// }
+//
+// .userDropListItemSpotIndex {
+//   padding: 0px;
+// }
 // background-image: image-url('name_of_image_file.jpg')

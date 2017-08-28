@@ -1,3 +1,8 @@
 import values from 'lodash/values';
 
-export const selectAllSpots = state => values(state.spots);
+export const selectAllSpots = (state) => {
+  debugger
+  return(
+    values(state.spots)
+  );
+};

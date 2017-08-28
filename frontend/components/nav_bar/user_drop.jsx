@@ -15,9 +15,11 @@ class UserDrop extends React.Component {
     return(
       <div className='userDrop' >
         <ul className='userDroplist'>
-          <li className='userDropListItemFirst'>Find Spots</li>
-          <Link className='linkToSpotsIndex' to='/api/spots'> See Spots</Link>
-          <li>See Hosts</li>
+          <li className='listItemFirst'>Find Spots</li>
+          <li>
+            <Link className='linkToSpots' to='/api/spots'> See Spots</Link>
+          </li>
+          <li className='listItemHosts'>See Hosts</li>
           <li className='bonusUserDrop'>(maybe messages)</li>
           <li className='userDropListItemLast'>
             <button onClick={this.props.logout}>Log Out</button>
