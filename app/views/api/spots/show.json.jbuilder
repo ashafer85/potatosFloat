@@ -1,2 +1,2 @@
 
-json.partial!('/api/spots/spot_show', spot: @spot)
+json.partial!(`/api/spots/${spot.id}`, spot: @spot)
