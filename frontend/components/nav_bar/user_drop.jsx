@@ -16,7 +16,7 @@ class UserDrop extends React.Component {
       <div className='userDrop' >
         <ul className='userDroplist'>
           <li className='userDropListItemFirst'>Find Spots</li>
-          <li>See Spots</li>
+          <Link className='linkToSpotsIndex' to='/api/spots'> See Spots</Link>
           <li>See Hosts</li>
           <li className='bonusUserDrop'>(maybe messages)</li>
           <li className='userDropListItemLast'>

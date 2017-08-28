@@ -1,4 +1,7 @@
 import React from 'react';
+import * as APIUtil from '../util/spots_api_util';
+
+import { fetchAllSpots } from '../util/spots_api_util';
 
 export const RECEIVE_SPOTS = 'RECEIVE_SPOTS';
 export const RECEIVE_SPOT = 'RECEIVE_SPOT';
@@ -16,3 +19,8 @@ export const receiveSpot = (payload) => {
     payload
   };
 };
+
+export const requestAllSpots = () => (dispatch) => {
+  return APIUtil.fetchAllSpots()
+    .then( (spots) => dispatch(receiveAllSpots(spots)));
+}
