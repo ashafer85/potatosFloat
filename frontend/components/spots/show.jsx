@@ -16,12 +16,12 @@ class SpotShow extends React.Component {
 
   render() {
     const shownSpot = this.props.spot;
-    debugger
+    
     return(
 
       <div className='spotShowContainer'>
         <div className='backToIndexContainer'>
-            back2Spots
+            back2SpotsIndex
         </div>
 
         <div className='spotShowHeader'>
@@ -37,13 +37,27 @@ class SpotShow extends React.Component {
 
         <ul className='spotShowDetailContainer'>
             <div className='spotDetailHeader'>
-                <div className='spotDetailHeaderTitle'>{ shownSpot.title } '  details:'</div>
+                <div className='spotDetailHeaderTitle'>{ shownSpot.title }   details:</div>
             </div>
             <div className='spotDetailBody'>
-                <div>BODY</div>
+                <ul>
+                  <li> shownSpot.spot_image_url should come into play eventually</li>
+                  <li>Description: {shownSpot.description}</li>
+                  <li>City: {shownSpot.city}</li>
+                  <li>Capacity: {shownSpot.capacity}</li>
+                  <li>lat: {shownSpot.lat}</li>
+                  <li>lng: {shownSpot.lng}</li>
+                  <li>Sleeping Arrangement: {shownSpot.sleep_arrangement}</li>
+                  <li>Roommate Situation: {shownSpot.roommate_situation}</li>
+                  <li>Public Transportation:{shownSpot.public_trans}</li>
+                  <li>Kids Allowed: {shownSpot.kid}</li>
+                  <li>Pets Allowed:{shownSpot.pet}</li>
+                  <li>Smoking Allowed: {shownSpot.smoking}</li>
+                  <li>Wheelchair Acessible: {shownSpot.wheelchair}</li>
+                  <li>Host identification #: {shownSpot.host_id}</li>
+                </ul>
             </div>
         </ul>
-        {this.props.spot.description}
 
         <div className='spotShowFooter'>
             FOOTER

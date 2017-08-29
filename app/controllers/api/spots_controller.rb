@@ -7,7 +7,6 @@ class Api::SpotsController < ApplicationController
   end
 
   def show
-    # debugger
     @spot = Spot.find(params[:id])
     render :show
   end

@@ -12,9 +12,9 @@ class UserDrop extends React.Component {
   render() {
     return(
       <div className='userDrop' >
-        <ul className='userDroplist'>
+        <ul className='userDropList'>
           <li className='listItemFirst'>Find Spots</li>
-          <li>
+          <li className='listItem'>
             <Link className='linkToSpots' to='/spots'> See Spots</Link>
           </li>
           <li className='listItemHosts'>See Hosts</li>
