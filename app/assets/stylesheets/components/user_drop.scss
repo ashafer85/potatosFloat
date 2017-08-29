@@ -7,8 +7,9 @@
   right: 20px;
   border-radius: 10px;
 
-  ul {
-    background-color: none;
+  .userDropList {
+    background-color: white;
+    color: #b4b6b9;
     padding: 0px;
     min-width: 200px;
     max-width: 388px;
@@ -16,7 +17,7 @@
     border: 1px solid #a0aab8;
     box-shadow: 10px 10px 5px rgba(160,170,184,0.1);
     // padding-top: 5px;
-    .listItemFirst, .listItemHosts, .listItemLast, .bonusUserDrop {
+    .listItem, .listItemFirst, .listItemHosts, .listItemLast, .bonusUserDrop {
       background-color: white;
       color: #b4b6b9;
       padding: 12px 24px;

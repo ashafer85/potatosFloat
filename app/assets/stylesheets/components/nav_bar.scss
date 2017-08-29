@@ -1,6 +1,6 @@
 .navBar {
   background-color: white;
-  border: 1px solid gray;
+  border-bottom: 1px solid gray;
   width: 100%;
   min-width: 410px;
   display: flex;
@@ -15,6 +15,9 @@
   padding: 10px 20px;
   font-size: 30px;
   margin: 0px;
+}
+.logo:hover {
+  background-color: #d8efde;
 }
 
 .auth {
