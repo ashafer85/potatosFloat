@@ -7,64 +7,69 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # CREATEING
-  Spot.destroy_all
 
-  Spot.create!(
-    'title' => '001s Spot',
-    'description' => 'One bedroom apartment in East Village',
-    'capacity' => 1,
-    'city' => 'New York City',
-    'lat' => 40.727837,
-    'lng' => -73.995820,
-    'sleep_arrangement' => 'One couch in the living room',
-    'public_trans' => 'three blocks away from the green 6 and four blocks from the orange B D F M',
-    # 'kid' => false,
-    # 'pet' => false,
-    # 'smoking' => false,
-    # 'wheelchair' => false,
-    'host_id' => 44
-  )
+User.destroy_all
+user1 = User.create!(
+  'username' => 'Tiffany',
+  'password' => 'gfgfgf',
+  'gender' => 'F',
+  'age' => '24'
+)
+user2 = User.create!(
+  'username' => 'Melissa',
+  'password' => 'sissis',
+  'gender' => 'F',
+  'age' => '27'
+)
+user3 = User.create!(
+  'username' => 'Garrit',
+  'password' => 'friend',
+  'gender' => 'M',
+  'age' => '24'
+)
 
-  Spot.create!('title' => '002s Spot',
-    'description' => 'Two bedroom apartment near Gramercy Park',
-    'capacity' => 2,
-
-    'city' => 'New York City',
-    'lat' => 40.737322,
-    'lng' => -73.983413,
-
-    'sleep_arrangement' => 'Two couches in living room with full-size pullout capablility',
-    'roommate_situation' => 'One roommate in other bedroom',
-    'public_trans' => 'three blocks away from the green 4 & 6 and seven street blocks from silver L',
-
-    # 'kid' => false,
-    # 'pet' => false,
-    # 'smoking' => false,
-    # 'wheelchair' => false,
-
-    'host_id' => 45,
-  )
-  Spot.create!(
-    'title' => '003s Spot',
-    'description' => 'Four bedroom in Mid-town East',
-    'capacity' => 1,
-
-
-    'city' => 'New York City',
-    'lat' => 40.743494,
-    'lng' => -73.972652,
-
-    'sleep_arrangement' => 'Large L couch in the living room',
-    'roommate_situation' => 'Three other great roommates, each with separate room',
-    'public_trans' => 'Twelve-minute walk to the green 6 & 4',
-
-    # 'kid' => false,
-    # 'pet' => false,
-    # 'smoking' => false,
-    # 'wheelchair' => false,
-
-    'host_id' => 46,
-  )
+Spot.destroy_all
+Spot.create!(
+  'title' => 'Law Dorm',
+  'description' => 'One bedroom apartment in East Village',
+  'capacity' => 1,
+  'city' => 'New York City',
+  'lat' => 40.727837,
+  'lng' => -73.995820,
+  'sleep_arrangement' => 'One couch in the living room',
+  'public_trans' => 'three blocks away from the green 6 and four blocks from the orange B D F M',
+  # 'kid' => false,
+  # 'pet' => false,
+  # 'smoking' => false,
+  # 'wheelchair' => false,
+  'host_id' => user1.id,
+  'spot_image_url' => 'couch01.jpg',
+)
+Spot.create!('title' => 'So Many Cacti',
+  'description' => 'Two bedroom apartment near Gramercy Park',
+  'capacity' => 2,
+  'city' => 'New York City',
+  'lat' => 40.737322,
+  'lng' => -73.983413,
+  'sleep_arrangement' => 'Large L couch in living room',
+  'roommate_situation' => 'One roommate in other bedroom',
+  'public_trans' => 'three blocks away from the green 4 & 6 and seven street blocks from silver L',
+  'host_id' => user2.id,
+  'spot_image_url' => 'couch04.jpg',
+)
+Spot.create!(
+  'title' => 'See the Water',
+  'description' => 'Four bedroom in Mid-town East, 23rd floor with balcony and view of East River',
+  'capacity' => 1,
+  'city' => 'New York City',
+  'lat' => 40.743494,
+  'lng' => -73.972652,
+  'sleep_arrangement' => 'Large L couch in the living room',
+  'roommate_situation' => 'Three other great roommates, each with separate room',
+  'public_trans' => 'Twelve-minute walk to the green 6 & 4',
+  'host_id' => user3.id,
+  'spot_image_url' => 'couch06.jpg'
+)
 
 
 
