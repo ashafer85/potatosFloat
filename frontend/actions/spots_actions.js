@@ -7,6 +7,7 @@ export const RECEIVE_ALL_SPOTS = 'RECEIVE_ALL_SPOTS';
 export const START_LOADING_ALL_SPOTS = 'START_LOADING_ALL_SPOTS';
 export const RECEIVE_ONE_SPOT = 'RECEIVE_ONE_SPOT';
 export const START_LOADING_SINGLE_SPOT = 'START_LOADING_SINGLE_SPOT';
+export const RECEIVE_SPOT_ERROR = 'RECEIVE_SPOT_ERROR';
 
 
 export const receiveAllSpots = (payload) => {
@@ -23,15 +24,22 @@ export const receiveOneSpot = (spot) => {
   };
 };
 
+export const receiveSpotError = (err) => {
+  return {
+    type: RECEIVE_SPOT_ERROR,
+    err
+  };
+};
+
 export const requestAllSpots = () => (dispatch) => {
   // dispatch(startLoadingAllSpots);
   return APIUtil.fetchAllSpots()
     .then( (payload) => dispatch(receiveAllSpots(payload)));
 };
 
-export const requestOneSpot = () => (dispatch) => {
+export const requestOneSpot = (id) => (dispatch) => {
   // dispatch(startLoadingAllSpots);
-  return APIUtil.fetchOneSpot().then(
+  return APIUtil.fetchOneSpot(id).then(
     (payload) => dispatch(receiveOneSpot(payload)),
     (err) => dispatch(receiveSpotError(err))
   );

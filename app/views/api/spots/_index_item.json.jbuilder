@@ -1,2 +1,2 @@
 
-json.extract!(spot, :title, :description, :city)
+json.extract!(spot, :id, :title, :description, :city)

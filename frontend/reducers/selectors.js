@@ -5,3 +5,9 @@ export const selectAllSpots = (state) => {
     values(state.spots)
   );
 };
+
+export const selectOneSpot = (state) => {
+  return(
+    values(state.spot)
+  );
+};

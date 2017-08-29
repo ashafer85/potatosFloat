@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Link } from 'react-router-dom';
+import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
 import IndexItem from './index_item';
+
 import { requestAllSpots } from '../../actions/spots_actions';
 
 class SpotsIndex extends React.Component {
@@ -22,9 +23,7 @@ class SpotsIndex extends React.Component {
     return(
       <div className='spotsIndexContainer'>
         <span className='spotsIndexHeader'>
-
           <h2> Spots in New York: </h2>
-
           <form className='spotSearchForm'>
 
             <div className='boundaryDates'>
@@ -57,8 +56,8 @@ class SpotsIndex extends React.Component {
             </label>
 
             <div className='spotsSearchButtons'>
-              <div className='clearSearchFilters'> Clear Filters </div>
-              <input className='submitSearch' type='submit' value='Search'/> 
+              <div className='clearSearchFilters' > Clear Filters </div>
+              <input className='submitSearch' type='submit' value='Search'/>
             </div>
 
 
@@ -70,7 +69,6 @@ class SpotsIndex extends React.Component {
             </div>
 
           </form>
-
         </span>
 
         <ul className='spotsIndex'>

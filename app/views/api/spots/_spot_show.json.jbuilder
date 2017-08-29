@@ -1,5 +1,5 @@
 
-json.extract! spot, :description, :capacity, :sleep_arrangement,
+json.extract! spot, :id, :description, :capacity, :sleep_arrangement,
   :roommate_situation, :public_trans, :kid, :pet, :smoking, :wheelchair, :host_id
 
 
