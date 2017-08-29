@@ -19,7 +19,7 @@ class UserDrop extends React.Component {
           </li>
           <li className='listItemHosts'>See Hosts</li>
           <li className='bonusUserDrop'>(maybe messages)</li>
-          <li className='userDropListItemLast'>
+          <li className='listItemLast'>
             <button onClick={this.props.logout}>Log Out</button>
           </li>
         </ul>

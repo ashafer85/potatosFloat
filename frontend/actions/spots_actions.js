@@ -16,10 +16,10 @@ export const receiveAllSpots = (payload) => {
   };
 };
 
-export const receiveOneSpot = (payload) => {
+export const receiveOneSpot = (spot) => {
   return {
     type: RECEIVE_ONE_SPOT,
-    spots: payload
+    spot
   };
 };
 
@@ -27,6 +27,14 @@ export const requestAllSpots = () => (dispatch) => {
   // dispatch(startLoadingAllSpots);
   return APIUtil.fetchAllSpots()
     .then( (payload) => dispatch(receiveAllSpots(payload)));
+};
+
+export const requestOneSpot = () => (dispatch) => {
+  // dispatch(startLoadingAllSpots);
+  return APIUtil.fetchOneSpot().then(
+    (payload) => dispatch(receiveOneSpot(payload)),
+    (err) => dispatch(receiveSpotError(err))
+  );
 };
 
 // export const startLoadingAllSpots = () => {

@@ -12,7 +12,7 @@ export const spotsReducer = (state = {}, action) => {
       return merge( {}, state, action.spots );
 
     case RECEIVE_ONE_SPOT:
-      return merge( {}, state, action.spots);
+      return merge( {}, state, {[action.spot.id]: action.spot});
 
     //   // spot.review_ids = action.payload.reviews.map(review => review.id);
     //   return merge({}, state, { [spot.id]: spot });

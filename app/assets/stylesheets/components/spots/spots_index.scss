@@ -1,59 +1,99 @@
 
 .spotsIndexContainer {
   width: 100%;
-  padding: 30px;
+  // padding: 30px;
   background-color: #f1efea;
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 9994;
+  font-family: 'Nunito', sans-serif;
 
   .spotsIndexHeader {
-    width: 70%;
-    min-width: 550px;
+    width: 700px;
     background-color: #ffffff;
     // align-items: center;
     padding: 20px;
-    z-index: 9995;
+    margin-top: 15px;
     // box-shadow: 6px 6px 6px 6px 4px rgba(160,170,184,0.1);
     .spotSearchForm {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      .date {
+      justify-content: space-around;
+      flex-wrap: wrap;
+      .boundaryDates {
+        padding: 10px 0px;
         display: flex;
-        flex-direction: column;
-
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .date {
+          display: flex;
+          flex-direction: column;
+          width: 45%;
+        }
       }
       .travelerCount {
+        // padding: 10px 0px;
         display: flex;
         flex-direction: column;
+        .selectNumGuests {
+          height: 44px;
+          background-color: white;
+          border-radius: 8px;
+          border: 1px solid #d3dae0;
+        }
       }
-
       input {
         text-align: center;
         padding: 10px 0px;
-        background-color: #31ad31;
-        border-radius: 10px;
+        background-color: white;
+        border-radius: 8px;
+        border: 1px solid #d3dae0;
       }
-
-      .moreFilters {
-        width: inherit;
-        padding: 15px 0px;
+      .spotSearchButtons {
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
+        flex-wrap: nowrap;
 
-        .linkToMoreFilters {
-
+        .clearSearchFilters {
+          padding: 12px 15px;
+          background-color: #afb7c3;
+          color: white;
         }
-        .linkToMoreFilters:hover {
-          color: #db6530;
+        .clearSearchFilters:hover {
+          background-color: #888f99;
           cursor: pointer;
         }
+        .submitSearch {
+          padding: 12px 15px;
+          background-color: #287fb8;
+          color: white;
+        }
+        .submitSearch {
+          background-color: #1d6696;
+          cursor: pointer;
+        }
+
+
       }
+      .moreFilters {
+        width: inherit;
+        margin-top: 10px;
+        padding: 5px 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        background-color: #f9f9f9;
 
-
+        .linkToMoreFilters {
+          margin-right: 10px;
+        }
+      }
+      .linkToMoreFilters:hover {
+        color: #db6530;
+        cursor: pointer;
+      }
     }
 
     h2 {
@@ -63,21 +103,64 @@
   }
 
   .spotsIndex {
-    width: 70%;
-    min-width: 550px;
+    width: 740px;
+    background-color: #f1efea;
+    // padding: 15px 0px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-
+    justify-content: space-between;
 
     .spotsIndexItem {
-      width: 44%;
-      min-width: 242px;
-      margin: 4%;
+      width: 355px;
+      height: 225px;
+      margin: 15px 0px;
       background-color: #ffffff;
       display: flex;
+      flex-direction: column;
+      border-radius: 3px;
+
+      .spotsIdxItemHeader {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        .spotsIdxItemPic {
+          background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), image-url('actual_splash_image.jpg');
+          background-position: center center;
+          border-top-left-radius: 3px;
+          width: 45%;
+          height: 135px;
+          text-align: center;
+        }
+
+        .spotsIdxItemHeaderContent {
+          width: 55%;
+          padding: 20px 10px;
+          text-align: center;
+
+          .spotsIdxItemTitle {
+            width: inherit;
+            padding: 20px 10px 10px 10px;
+            text-align: center;
+            .fa-check-circle {
+              color: #41b866;
+            }
+          }
+          .spotsIdxItemLinkToReviews {
+            width: inherit;
+            padding: 0px 10px;
+          }
+        }
+
+      }
     }
+
+    .spotsIdxItem:hover {
+      cursor: pointer;
+      box-shadow: 10px 10px 5px rgba(160,170,184,0.1);
+    }
+
   }
 
 }
