@@ -1,10 +1,9 @@
 PHASE TIMELINE:
 
+Phase 00 - Auth/hosting on Heroku
 Phase 01 - Spots
 Phase 02 - Bookings
-
 Phase 03 - Spots Search
-
 Phase 04 - Reviews
 Phase 05 - Messaging
 Phase 06 - User/Host Profiles
