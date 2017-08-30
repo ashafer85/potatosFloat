@@ -8,6 +8,20 @@ class User < ApplicationRecord
     primary_key: :id,
     foreign_key: :host_id
 
+  has_many :bookings, # user.bookings represent bookings made as a surfer
+    class_name: :Booking,
+    primary_key: :id,
+    foreign_key: :surfer_id
+
+  has_many :bookings_spots, # represents spots for which user(surfer) has made a booking
+    through: :bookings,
+    source: :spot
+
+  has_many :spot_bookings, # represents user's spots with pending/approved/denied bookings
+    through: :spots,
+    source: :bookings
+
+
   after_initialize :ensure_session_token
   attr_reader :password
 

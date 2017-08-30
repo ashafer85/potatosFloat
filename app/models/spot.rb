@@ -9,11 +9,20 @@ class Spot < ApplicationRecord
   # validates :public_trans, presence: true
   # , default: 'its New York...'
   validates :kid, :pet, :smoking, :wheelchair, default: false, inclusion: [true, false]
-  validates :host_id, presence: true
+  validates :host_id, presence: true, uniqueness: true
 
   belongs_to :host,
     class_name: :User,
     primary_key: :id,
     foreign_key: :host_id
+
+  has_many :bookings,
+    class_name: :Booking,
+    primary_key: :id,
+    foreign_key: :spot_id
+
+  has_many :surfers_requesting,
+    through: :bookings,
+    source: :surfer
 
 end
