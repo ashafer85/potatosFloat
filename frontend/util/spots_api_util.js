@@ -12,3 +12,11 @@ export const fetchOneSpot = (id) => {
     url: `/api/spots/${id}`
   });
 };
+
+export const createSpot = (spot) => {
+  return $.ajax({
+    method: 'POST',
+    url: '/api/spots',
+    data: { spot }
+  });
+};

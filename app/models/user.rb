@@ -3,7 +3,7 @@ class User < ApplicationRecord
   validates :username, :password_digest, :session_token, presence: true, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
-  has_many :spots,
+  has_one :spot,
     class_name: :Spot,
     primary_key: :id,
     foreign_key: :host_id

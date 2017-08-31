@@ -25,12 +25,12 @@ Feature 4 - Reviews
   Smooth, bug-free navigation
   Adequate and appropriate seeds to demonstrate the feature
 
-Feature 5 - Messaging
+BONUS Feature 5 - Messaging
   Adequate styling
   Smooth, bug-free navigation
   Adequate and appropriate seeds to demonstrate the feature
 
-Feature 6 - User/Host Profiles
+BONUS Feature 6 - User/Host Profiles
   Adequate styling
   Smooth, bug-free navigation
   Adequate and appropriate seeds to demonstrate the feature

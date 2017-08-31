@@ -27,6 +27,12 @@ user3 = User.create!(
   'gender' => 'M',
   'age' => '24'
 )
+user4 = User.create!(
+  'username' => 'Guest',
+  'password' => 'password',
+  'gender' => 'F',
+  'age' => '25'
+)
 
 Spot.destroy_all
 Spot.create!(
@@ -70,8 +76,19 @@ Spot.create!(
   'host_id' => user3.id,
   'spot_image_url' => 'couch06.jpg'
 )
-
-
+Spot.create!(
+  'title' => 'Guest Spot',
+  'description' => 'Previously an office space, fllor to ceiling windows allows for great views of city',
+  'capacity' => 1,
+  'city' => 'New York City',
+  'lat' => 40.745200,
+  'lng' => -73.994082,
+  'sleep_arrangement' => 'Couch in the former corner office',
+  'roommate_situation' => 'Multiple roommates come a go quietly',
+  'public_trans' => 'Two blocks from the red 1 2 and grean 5',
+  'host_id' => user4.id,
+  'spot_image_url' => 'couch06.jpg'
+)
 
 #   ActiveRecord::Base.transaction do
 

@@ -8,6 +8,8 @@ export const START_LOADING_ALL_SPOTS = 'START_LOADING_ALL_SPOTS';
 export const RECEIVE_ONE_SPOT = 'RECEIVE_ONE_SPOT';
 export const START_LOADING_SINGLE_SPOT = 'START_LOADING_SINGLE_SPOT';
 export const RECEIVE_SPOT_ERROR = 'RECEIVE_SPOT_ERROR';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
+
 
 
 export const receiveAllSpots = (payload) => {
@@ -31,10 +33,18 @@ export const receiveSpotError = (err) => {
   };
 };
 
+export const clearErrors = () => {
+  return {
+    type: CLEAR_ERRORS,
+  };
+};
+
 export const requestAllSpots = () => (dispatch) => {
   // dispatch(startLoadingAllSpots);
   return APIUtil.fetchAllSpots()
-    .then( (payload) => dispatch(receiveAllSpots(payload)));
+    .then(
+      (payload) => dispatch(receiveAllSpots(payload))
+  );
 };
 
 export const requestOneSpot = (id) => (dispatch) => {
@@ -43,6 +53,18 @@ export const requestOneSpot = (id) => (dispatch) => {
     (payload) => dispatch(receiveOneSpot(payload)),
     (err) => dispatch(receiveSpotError(err))
   );
+};
+
+export const processForm = (booking) => (dispatch) => {
+  return APIUtil.createSpot(booking)
+    .then(
+      (res) => {
+        return dispatch(receiveOneSpot(res))
+      },
+      (res) => {
+        return dispatch(receiveSpotError(res.responseJSON))
+      }
+    );
 };
 
 // export const startLoadingAllSpots = () => {

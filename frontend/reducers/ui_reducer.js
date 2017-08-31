@@ -9,7 +9,7 @@ const _defaultUI = {
   userDropStatus: false
 };
 
-export const uiReducer = ( state = _defaultUI, action) => {
+const uiReducer = ( state = _defaultUI, action) => {
   Object.freeze(state);
   switch(action.type) {
 
@@ -21,3 +21,5 @@ export const uiReducer = ( state = _defaultUI, action) => {
       return state;
   };
 };
+
+export default uiReducer;

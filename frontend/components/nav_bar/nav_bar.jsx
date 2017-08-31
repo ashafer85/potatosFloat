@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
-import UserDrop from './user_drop';
+import UserDropContainer from './user_drop_container';
 import LandingPage from '../landing_page/landing_page';
 // import { swithcUserDropStatus } from '../../actions/ui_actions';
 
@@ -25,14 +25,14 @@ class NavBar extends React.Component {
     if (this.props.userDropStatus === false) {
       dropIt = null;
     } else {
-      dropIt = <UserDrop logout={this.props.logout}/>;
+      dropIt = <UserDropContainer logout={this.props.logout}/>;
     }
 
     if (this.props.currentUser === null) {
       return(
         <main>
           <div className='navBar'>
-            <div className='logo'>potatosfloat</div>
+            <Link to='/' className='logo'>potatosfloat</Link>
 
             <div className='auth'>
               <Link className='joinLink' to='/signup'> Join </Link>

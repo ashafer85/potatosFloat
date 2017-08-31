@@ -128,8 +128,9 @@
         flex-wrap: nowrap;
 
         .spotsIdxItemPic {
-          background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), image-url('favicon_foggy.jpg');
+          background: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) ), image-url('favicon_foggy');
           background-position: center center;
+          background-size: contain;
           border-top-left-radius: 3px;
           width: 45%;
           height: 135px;
@@ -157,7 +158,11 @@
           }
         }
       }
-
+    }
+    .spotIndexItem:hover {
+      .spotsIdxItemPic:hover {
+        background: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) ), image-url('favicon_foggy');
+      }
     }
 
     .spotsIdxItem:hover {

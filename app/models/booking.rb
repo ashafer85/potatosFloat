@@ -1,4 +1,4 @@
-class BookingRequest < ApplicationRecord
+class Booking < ApplicationRecord
   STATUS_STATES = %w(APPROVED DENIED PENDING).freeze
 
   validates :spot_id, :surfer_id, presence: true
@@ -15,11 +15,12 @@ class BookingRequest < ApplicationRecord
     primary_key: :id,
     foreign_key: :surfer_id
 
-  belongs_to :host,
+  has_one :host,
     through: :spot,
     source: :host
 
   after_initialize :assign_pending
+
 
   def approve!
     raise 'not pending' unless self.status == 'PENDING'

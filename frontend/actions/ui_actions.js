@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const SWITCH_USER_DROP_STATUS = 'RECEIVE_CURRENT_USER';
+export const SWITCH_USER_DROP_STATUS = 'SWITCH_USER_DROP_STATUS';
 
 export const switchUserDropStatus = (oldDropStatus) => {
   const userDropStatus = !oldDropStatus;
