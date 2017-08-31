@@ -40,14 +40,27 @@ class SpotForm extends React.Component {
     e.preventDefault();
     const spot = merge({}, this.state);
     // processForm returns a promise... thus qualifying the .then
-    this.props.processForm(spot).then( () => {
-      this.props.clearErrors();
-      // this.props.history.push(`/spots/${this.state.spot_id}`);
-    });
+    this.props.processForm(spot)
+      .then( () => {
+        this.props.clearErrors();
+        this.props.history.push(`/spots/${this.state.spot_id}`);
+      });
+      // ,
+      //  () => {
+      //
+      // });
   }
 
   render () {
-
+    let allErrors;
+    debugger
+    if (this.props.errors.length != 0) {
+      allErrors = this.props.errors.map((el, idx) => {
+        return(
+          <li key={idx}> <i className="fa fa-exclamation-triangle" aria-hidden="true"></i> {el} </li>
+        )
+      });
+    }
     return(
       <div className='spotFormContainer'>
           <h2> You Don't Have a Spot Yet! </h2>
@@ -76,8 +89,9 @@ class SpotForm extends React.Component {
                   <label className='spotLabel'> Spot Capacity: </label>
                   <select
                     className='spotField'
-                    type='integer'>
-                    <option selected='selected' value='1'>1</option>
+                    type='integer'
+                    defaultValue='1'>
+                    <option value='1'>1</option>
                     <option value='2'>2</option>
                     <option value='3'>3</option>
                     <option value='4'>4</option>
@@ -148,8 +162,9 @@ class SpotForm extends React.Component {
                       type='boolean'
                       value={this.state.pet}
                       onChange={this.update('pet')}
-                      className="spotField">
-                      <option selected='selected' value='false' > No </option>
+                      className="spotField"
+                      defaultValue='false'>
+                      <option value='false' > No </option>
                       <option value='true' > Yes </option>
                   </select>
               </div>

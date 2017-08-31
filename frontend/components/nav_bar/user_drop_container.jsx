@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import UserDrop from './user_drop';
 
 const mapStateToProps = (state) => {
-  debugger
   return {
     currentUser: state.session.currentUser,
   };

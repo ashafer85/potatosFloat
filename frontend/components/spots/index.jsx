@@ -16,9 +16,25 @@ class SpotsIndex extends React.Component {
   }
 
   render() {
-    const allSpots = Object.keys(this.props.spots).map((key) => {
-      return this.props.spots[key];
-    })
+    let allSpots = Object.values(this.props.spots).map((spot) => {
+      debugger
+      if (spot.id === undefined) {
+        return undefined;
+      } else {
+       return spot;
+     };
+    });
+    allSpots = allSpots.filter((el) => {
+      return el !== undefined;
+    });
+
+    const allItemSpots = allSpots.map( (spot) => {
+      return (
+        <IndexItem
+          spot={ spot }
+          key={ spot.id } />
+        );
+      });
 
     return(
       <div className='spotsIndexContainer'>
@@ -38,9 +54,9 @@ class SpotsIndex extends React.Component {
             </div>
 
             <label className='travelerCount'> # OF TRAVELERS
-              <select className='selectNumGuests' type='integer'>
+              <select className='selectNumGuests' type='integer' defaultValue='1'>
                 <option value='Any'>Any</option>
-                <option selected='selected' value='1'>1</option>
+                <option value='1'>1</option>
                 <option value='2'>2</option>
                 <option value='3'>3</option>
                 <option value='4'>4</option>
@@ -72,14 +88,7 @@ class SpotsIndex extends React.Component {
         </span>
 
         <ul className='spotsIndex'>
-          { allSpots.map( (spot) => {
-            return (
-              <IndexItem
-                spot={ spot }
-                key={ spot.id } />
-              );
-            })
-          }
+          { allItemSpots }
         </ul>
       </div>
     );

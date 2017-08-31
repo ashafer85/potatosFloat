@@ -7,7 +7,7 @@ import LandingPage from '../landing_page/landing_page';
 
 class NavBar extends React.Component {
 
-  constructor(props) {
+  constructor(props, ownProps) {
     super(props);
     this.state = {
       username: '',

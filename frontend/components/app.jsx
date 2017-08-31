@@ -20,7 +20,7 @@ const App = () => {
           </Switch>
             <Route exact path='/spots/:id' component={ SpotShowContainer }/>
             <Route exact path='/spots_new' component={ SpotFormContainer }/>
-            <Route exact path='/' component={ SpotsIndexContainer }/>
+            <Route path='/' component={ SpotsIndexContainer }/>
         </div>
       </main>
   );

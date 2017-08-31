@@ -11,14 +11,11 @@ class UserDrop extends React.Component {
 
   render() {
     let mySpotPath;
-    debugger
     if (this.props.currentUser.spot) {
-      debugger
       mySpotPath = <Link className='linkToMySpot' to={`/spots/${this.props.currentUser.spot.id}`}> My Spot </Link>
     } else {
       mySpotPath =  <Link className='linkToMySpot' to='/spots_new'> My Spot </Link>
     }
-
     return(
       <div className='userDrop' >
         <ul className='userDropList'>

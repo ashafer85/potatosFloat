@@ -21,12 +21,15 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   if (ownProps.location.pathname === '/signup') {
     return {
       processForm: (user) => dispatch(signup(user)),
-      clearErrors: () => dispatch(clearErrors())
+      clearErrors: () => dispatch(clearErrors()),
+      login: (user) => dispatch(login(user))
     };
   } else if (ownProps.location.pathname === '/login') {
     return {
       processForm: (user) => dispatch(login(user)),
-      clearErrors: () => dispatch(clearErrors())
+      clearErrors: () => dispatch(clearErrors()),
+      login: (user) => dispatch(login(user))
+
     };
   }
 }

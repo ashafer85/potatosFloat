@@ -14,6 +14,7 @@ class AuthForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleGuestLogin = this.handleGuestLogin.bind(this);
   }
 
   componentWillUnmount() {
@@ -36,7 +37,16 @@ class AuthForm extends React.Component {
     this.setState(newState);
   }
 
+  handleGuestLogin(e) {
+    e.preventDefault();
+    this.props.login({username: 'guest', password: 'password'}).then( () => {
+      this.props.clearErrors();
+      this.props.history.push('/');
+    });
+  }
+
   render () {
+    debugger
     let allErrors;
     if (this.props.errors.length !== 0) {
       allErrors = this.props.errors.map((el, idx) => {
@@ -71,6 +81,8 @@ class AuthForm extends React.Component {
         </ul>;
     }
 
+
+    debugger
     return(
       <div className='authFull'>
         <div className='authFormContainer'>
@@ -102,6 +114,7 @@ class AuthForm extends React.Component {
                 value={submitThis}/>
           </form>
           { switchAuthForm }
+          <button onClick={this.handleGuestLogin}>Guest Login</button>
         </div>
         <Link className='authExitTop' to='/'></Link>
         <Link className='authExitRight' to='/'></Link>
