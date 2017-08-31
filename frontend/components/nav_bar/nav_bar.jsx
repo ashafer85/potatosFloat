@@ -46,7 +46,7 @@ class NavBar extends React.Component {
       return(
         <div className='navBar'>
 
-          <div className='logo'>potatosfloat</div>
+          <Link to='/' className='logo'>potatosfloat</Link>
 
           <ul className='userNav'>
             <li className='navGreeting'>Aloha_ {this.props.currentUser.username}</li>
