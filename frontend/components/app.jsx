@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import NavBarContainer from './nav_bar/nav_bar_container';
 import AuthFormContainer from './auth_form/auth_form_container';
 import SpotsIndexContainer from './spots/index_container';
@@ -15,11 +16,11 @@ const App = () => {
 
         <div className='pfBody'>
           <Switch>
-            <Route path='/signup' component={ AuthFormContainer } />
-            <Route path='/login' component={ AuthFormContainer } />
+            <AuthRoute path='/signup' component={ AuthFormContainer } />
+            <AuthRoute path='/login' component={ AuthFormContainer } />
           </Switch>
-            <Route exact path='/spots/:id' component={ SpotShowContainer }/>
-            <Route exact path='/spots_new' component={ SpotFormContainer }/>
+            <ProtectedRoute exact path='/spots/:id' component={ SpotShowContainer }/>
+            <ProtectedRoute exact path='/spots_new' component={ SpotFormContainer }/>
             <Route path='/' component={ SpotsIndexContainer }/>
         </div>
       </main>

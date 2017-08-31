@@ -14,7 +14,7 @@ const LandingPage = () => {
 
           <ul className='splashNav'>
             <li className='splashNavGuest'>
-              <Link to='/login' > Log In (will be Guest Account) </Link>
+              <Link to='/login' > Log In </Link>
             </li>
             <li className='splashNavJoin'>
               <Link to='/signup'> Join Now! </Link>

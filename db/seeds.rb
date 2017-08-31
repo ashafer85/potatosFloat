@@ -12,26 +12,26 @@ User.destroy_all
 user1 = User.create!(
   'username' => 'Tiffany',
   'password' => 'gfgfgf',
-  'gender' => 'F',
+  'gender' => 'Female',
   'age' => '24'
 )
 user2 = User.create!(
   'username' => 'Melissa',
   'password' => 'sissis',
-  'gender' => 'F',
+  'gender' => 'Female',
   'age' => '27'
 )
 user3 = User.create!(
   'username' => 'Garrit',
   'password' => 'friend',
-  'gender' => 'M',
+  'gender' => 'Male',
   'age' => '24'
 )
 user4 = User.create!(
   'username' => 'Guest',
   'password' => 'password',
-  'gender' => 'F',
-  'age' => '25'
+  'gender' => 'Female',
+  'age' => '29'
 )
 
 Spot.destroy_all
@@ -42,6 +42,7 @@ Spot.create!(
   'city' => 'New York City',
   'lat' => 40.727837,
   'lng' => -73.995820,
+  'sleep_option' => 'Shared Room',
   'sleep_arrangement' => 'One couch in the living room',
   'public_trans' => 'three blocks away from the green 6 and four blocks from the orange B D F M',
   # 'kid' => false,
@@ -57,11 +58,11 @@ Spot.create!('title' => 'So Many Cacti',
   'city' => 'New York City',
   'lat' => 40.737322,
   'lng' => -73.983413,
+  'sleep_option' => 'Public Room',
   'sleep_arrangement' => 'Large L couch in living room',
   'roommate_situation' => 'One roommate in other bedroom',
   'public_trans' => 'three blocks away from the green 4 & 6 and seven street blocks from silver L',
   'host_id' => user2.id,
-  'spot_image_url' => 'couch04.jpg',
 )
 Spot.create!(
   'title' => 'See the Water',
@@ -70,11 +71,11 @@ Spot.create!(
   'city' => 'New York City',
   'lat' => 40.743494,
   'lng' => -73.972652,
+  'sleep_option' => 'Private Room',
   'sleep_arrangement' => 'Large L couch in the living room',
   'roommate_situation' => 'Three other great roommates, each with separate room',
   'public_trans' => 'Twelve-minute walk to the green 6 & 4',
   'host_id' => user3.id,
-  'spot_image_url' => 'couch06.jpg'
 )
 Spot.create!(
   'title' => 'Guest Spot',
@@ -87,7 +88,6 @@ Spot.create!(
   'roommate_situation' => 'Multiple roommates come a go quietly',
   'public_trans' => 'Two blocks from the red 1 2 and grean 5',
   'host_id' => user4.id,
-  'spot_image_url' => 'couch06.jpg'
 )
 
 #   ActiveRecord::Base.transaction do

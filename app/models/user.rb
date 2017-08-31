@@ -1,7 +1,11 @@
 class User < ApplicationRecord
+  # include PgSearch
+  # multisearchable :against => [:age, :gender]
 
   validates :username, :password_digest, :session_token, presence: true, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
+  validates :gender, inclusion: ['Female', 'Male', 'Non-Binary']
+  validates :age, numericality: { greater_than_or_equal_to: 18, only_integer: true }
 
   has_one :spot,
     class_name: :Spot,

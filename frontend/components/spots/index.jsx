@@ -17,7 +17,6 @@ class SpotsIndex extends React.Component {
 
   render() {
     let allSpots = Object.values(this.props.spots).map((spot) => {
-      debugger
       if (spot.id === undefined) {
         return undefined;
       } else {

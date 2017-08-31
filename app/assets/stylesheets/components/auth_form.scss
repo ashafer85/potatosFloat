@@ -1,5 +1,5 @@
 .authFull {
-  position: absolute;
+  position: fixed;
   top: 0px;
   left: 0px;
   width: 100%;
@@ -104,7 +104,15 @@
   align-items: center;
   font-family: 'Ubuntu', sans-serif;;
 }
-
+.authErrors {
+  display: flex;
+  flex-direction: column;
+}
+.joinInputContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 .authFormInput {
   margin: 10px;
   width: 80%;
@@ -123,6 +131,9 @@
   border: 1px solid #287fb8;
   border-radius: 8px;
   text-align: center;
+}
+.guest {
+  background-color: #db6530;
 }
 
 .switchAuthForm {

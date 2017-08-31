@@ -53,7 +53,6 @@ class SpotForm extends React.Component {
 
   render () {
     let allErrors;
-    debugger
     if (this.props.errors.length != 0) {
       allErrors = this.props.errors.map((el, idx) => {
         return(

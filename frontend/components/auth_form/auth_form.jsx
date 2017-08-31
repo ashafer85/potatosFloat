@@ -10,6 +10,8 @@ class AuthForm extends React.Component {
     this.state = {
       username: '',
       password: '',
+      gender: '',
+      age: '',
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -46,22 +48,27 @@ class AuthForm extends React.Component {
   }
 
   render () {
-    debugger
     let allErrors;
     if (this.props.errors.length !== 0) {
-      allErrors = this.props.errors.map((el, idx) => {
-        return(
-          <li key={idx}> <i className="fa fa-exclamation-triangle" aria-hidden="true"></i> {el} </li>
-        )
-      });
+      allErrors =
+        <div className='authErrors'>
+          { this.props.errors.map((el, idx) => {
+            return(
+              <li key={idx}> <i className="fa fa-exclamation-triangle" aria-hidden="true"></i> {el} </li>
+            )
+          }
+        )}
+      </div>;
     }
 
     let switchAuthForm;
     let authFormTitle;
     let submitThis;
+    let joinInputs;
     if (this.props.formType === '/login') {
       authFormTitle = 'Log in to PotatosFloat';
       submitThis = 'Log In';
+      joinInputs = <div></div>;
       switchAuthForm =
         <ul className='switchAuthForm'>
           <li className='authFormOption'>Don't have an account?</li>
@@ -72,6 +79,26 @@ class AuthForm extends React.Component {
     } else {
       authFormTitle = 'Join PotatosFloat for free';
       submitThis = 'Join with Username';
+      joinInputs =
+        <div className='joinInputContainer'>
+          <select className='authFormInput'
+            type='string'
+            name='gender'
+            value={this.state.gender}
+            defaultValue='Gender'
+            onChange={this.handleChange}>
+            <option value='Gender'>Gender</option>
+            <option value='Female'>Female</option>
+            <option value='Male'>Male</option>
+            <option value='Non-Binary'>Non-Binary</option>
+          </select>
+          <input className='authFormInput'
+            type='integer'
+            name='age'
+            value={this.state.age}
+            placeholder='Age (in years)'
+            onChange={this.handleChange} />
+        </div>;
       switchAuthForm =
         <ul className='switchAuthForm'>
           <li className='authFormOption'>Already a member?</li>
@@ -80,9 +107,7 @@ class AuthForm extends React.Component {
           </li>
         </ul>;
     }
-
-
-    debugger
+    
     return(
       <div className='authFull'>
         <div className='authFormContainer'>
@@ -97,6 +122,7 @@ class AuthForm extends React.Component {
             { allErrors }
           </ul>
           <form className='authForm' onSubmit={this.handleSubmit}>
+              { joinInputs }
               <input className='authFormInput'
                 type='text'
                 name='username'
@@ -112,9 +138,9 @@ class AuthForm extends React.Component {
               <input className='authFormSubmit'
                 type='submit'
                 value={submitThis}/>
+              <button className='guest authFormSubmit' onClick={this.handleGuestLogin}>GUEST/DEMO LOGIN</button>
           </form>
           { switchAuthForm }
-          <button onClick={this.handleGuestLogin}>Guest Login</button>
         </div>
         <Link className='authExitTop' to='/'></Link>
         <Link className='authExitRight' to='/'></Link>
