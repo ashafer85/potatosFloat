@@ -1,15 +1,15 @@
-class BookingsController < ApplicationController
+class Api::BookingsController < ApplicationController
   def approve
     current_booking.approve!
     render json: current_booking
   end
 
   def create
-    @booking = Booking.new(booking_params)
+    @booking = current_user.bookings.new(booking_params)
     if @booking.save
-      render json: @booking.spot
+      render json: @booking
     else
-      flash.now[:errors] = @booking.errors.full_messages
+      render json: @booking.errors.full_messages
     end
   end
 
@@ -30,7 +30,7 @@ class BookingsController < ApplicationController
   end
 
   def current_spot
-    current_bookingt.spot
+    current_booking.spot
   end
 
   def booking_params
