@@ -8,8 +8,14 @@ export const RECEIVE_SPOTS = 'RECEIVE_SPOTS';
 export const RECEIVE_ONE_SPOT = 'RECEIVE_ONE_SPOT';
 export const RECEIVE_SPOT_ERROR = 'RECEIVE_SPOT_ERROR';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
+export const RECEIVE_NEW_SPOT = 'RECEIVE_NEW_SPOT';
 
-
+export const receiveNewSpot = (spot) => {
+  return {
+    type: RECEIVE_NEW_SPOT,
+    spot
+  };
+};
 
 export const receiveAllSpots = (payload) => {
   return {
@@ -73,7 +79,7 @@ export const processForm = (spot) => (dispatch) => {
   return APIUtil.createSpot(spot)
     .then(
       (res) => {
-        return dispatch(receiveOneSpot(res))
+        return dispatch(receiveNewSpot(res))
       },
       (res) => {
         return dispatch(receiveSpotError(res.responseJSON))

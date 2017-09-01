@@ -1,51 +1,57 @@
 import React from 'react';
-import updateFilter from '../../actions/filter_actions';
 
-const handleChange = (filter, updateFilter) => e => (
-  updateFilter(filter, e.currentTarget.value)
-);
 
-const FilterForm = ( stuff ) => (
-  <div>
-      <div className="filterTitle">Apply Filters:</div>
-      <form className='spotSearchForm'>
-          <label className='searchLabel'> # of Travelers
-              <select
-                  className='selectNumGuests'
-                  type='integer'
-                  defaultValue='1'
-                  value={stuff.capacity}
-                  onChange={handleChange('capacity', updateFilter)}>
-                  <option value='Any'>Any</option>
-                  <option value='1'>1</option>
-                  <option value='2'>2</option>
-                  <option value='3'>3</option>
-                  <option value='4'>4</option>
-                  <option value='5'>5</option>
-              </select>
-          </label>
+const FilterForm = ( stuff ) => {
+  const handleChange = (filter) => e => {
 
-          <label className='searchLabel'> Sleeping Option
-              <select className='selectNumGuests' type='integer' defaultValue='1'
-                  className='selectNumGuests'
-                  type='string'
-                  defaultValue='Public Room'
-                  value={stuff.sleep_option}
-                  onChange={handleChange('sleep_option', updateFilter)}>
-                  <option value='Public Room'>Public Room</option>
-                  <option value='Private Room'>Private Room</option>
-                  <option value='Shared Room'>Shared Room</option>
-                  <option value='Shared Bed'>Shared Bed</option>
-              </select>
-          </label>
+    return(
+      stuff.updateFilter(filter, e.currentTarget.value)
+    );
+  };
 
-          <div className='spotsSearchButtons'>
-              <div className='clearSearchFilters' > Clear Filters </div>
-              <input className='submitSearch' type='submit' value='Search'/>
-          </div>
-      </form>
-  </div>
-);
+  return (
+  <div className='filterFull'>
+      <div className='filterContainer'>
+          <div className="filterTitle">Apply Filters:</div>
+          <form className='spotSearchForm'>
+              <div className='searchItem'>
+                  <label className='searchLabel'> # of Travelers</label>
+                  <select
+                      className='selectFilter'
+                      type='integer'
+                      defaultValue='1'
+                      value={stuff.capacity}
+                      onChange={handleChange('capacity')}>
+                      <option value='Any'>Any</option>
+                      <option value='1'>1</option>
+                      <option value='2'>2</option>
+                      <option value='3'>3</option>
+                      <option value='4'>4</option>
+                      <option value='5'>5</option>
+                  </select>
+              </div>
+              <div className='searchItem'>
+                  <label className='searchLabel'> Sleeping Option</label>
+                  <select
+                      className='selectFilter'
+                      type='string'
+                      defaultValue='Public Room'
+                      value={stuff.sleep_option}
+                      onChange={handleChange('sleep_option')}>
+                      <option value='Public Room'>Public Room</option>
+                      <option value='Private Room'>Private Room</option>
+                      <option value='Shared Room'>Shared Room</option>
+                      <option value='Shared Bed'>Shared Bed</option>
+                  </select>
+              </div>
+
+              <div className='spotsSearchButtons'>
+                  <input className='submitSearch' type='submit' value='Search'/>
+              </div>
+          </form>
+      </div>
+  </div>);
+};
 
 export default FilterForm;
 

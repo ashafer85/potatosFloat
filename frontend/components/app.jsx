@@ -25,6 +25,7 @@ const App = () => {
             <ProtectedRoute exact path='/spots_search' component={ SearchContainer }/>
             <Route path='/' component={ SpotsIndexContainer }/>
         </div>
+
       </main>
   );
 };

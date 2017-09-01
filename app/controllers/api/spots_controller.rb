@@ -1,6 +1,7 @@
 
 class Api::SpotsController < ApplicationController
   before_action :ensure_logged_in, only: [:create]
+
   def index
     @spots = Spot.all
     render :index
@@ -25,8 +26,8 @@ class Api::SpotsController < ApplicationController
   def search
     # Generate the pg_search train from spot_params
     @spots = Spot.all
-    @spots = @spots.search_by_capacity(spot_params[:capacity]) if spot_params[:capacity]
-    @spots = @posts.search_by_sleep_option(spot_params[:sleep_option]) if spot_params[:sleep_options]
+    @spots = @spots.search_by_capacity(params[:capacity]) if params[:capacity]
+    @spots = @spots.search_by_sleep_option(params[:sleep_option]) if params[:sleep_option]
     render :search
   end
 

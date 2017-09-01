@@ -6,7 +6,7 @@ import { processForm, clearErrors } from '../../actions/spots_actions';
 const mapStateToProps = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
-    errors: state.bookings.errors,
+    errors: state.spots.errors || []
   };
 };
 

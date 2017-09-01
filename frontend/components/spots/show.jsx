@@ -26,7 +26,6 @@ class SpotShow extends React.Component {
     // if (this.props.spot.smoking === false) { smoking_str = 'No' } else { smoking_str = 'Yes' };
     // let wheelchair_str;
     // if (this.props.spot.wheelchair === false) { wheelchair_str = 'No' } else { wheelchair_str = 'Yes' };
-
     return(
 
       <div className='spotShowContainer'>

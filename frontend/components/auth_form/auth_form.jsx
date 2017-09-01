@@ -49,7 +49,7 @@ class AuthForm extends React.Component {
 
   render () {
     let allErrors;
-    if (this.props.errors.length !== 0) {
+    if (this.props.errors && this.props.errors.length !== 0) {
       allErrors =
         <ul className='authErrors'>
           { this.props.errors.map((el, idx) => {

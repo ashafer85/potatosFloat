@@ -4,7 +4,8 @@ import {
   RECEIVE_SPOTS,
   RECEIVE_ONE_SPOT,
   RECEIVE_SPOT_ERROR,
-  CLEAR_ERRORS
+  CLEAR_ERRORS,
+  RECEIVE_NEW_SPOT
 } from '../actions/spots_actions';
 
 const spotsReducer = (state = {}, action) => {
@@ -13,8 +14,10 @@ const spotsReducer = (state = {}, action) => {
     case RECEIVE_ALL_SPOTS:
       return merge( {}, state, action.spots );
     case RECEIVE_SPOTS:
-      return merge( {}, state, action.spots );
+      return action.spots.spots;
     case RECEIVE_ONE_SPOT:
+      return merge( {}, state, {[action.spot.id]: action.spot});
+    case RECEIVE_NEW_SPOT:
       return merge( {}, state, {[action.spot.id]: action.spot});
     case RECEIVE_SPOT_ERROR:
       const errors = action.errors;

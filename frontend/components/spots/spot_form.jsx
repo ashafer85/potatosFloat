@@ -46,12 +46,17 @@ class SpotForm extends React.Component {
     this.props.processForm(spot).then(
       () => {
         this.props.clearErrors();
-        this.props.history.push(`/spots/${this.state.spot_id}`);
+        // this.props.history.push(`/spots/${this.state.spot_id}`);
       });
       // ,
       //  () => {
       //
       // });
+  }
+  componentWillReceiveProps(newProps) {
+    if (newProps.currentUser.spot) {
+    newProps.history.push(`/spots/${newProps.currentUser.spot.id}`)
+    }
   }
 
   render () {
