@@ -31,15 +31,13 @@ class SpotShow extends React.Component {
       <div className='spotShowContainer'>
           <div className='spotShowHeader'>
               <div className='spotPic'>
-                  <div className='editPic'>eDit</div>
+                  <div className='editPic'></div>
               </div>
               <div className='showTitleContainer'>
                   <h2 className='showTitle'> { this.props.spot.title } </h2>
-                  <span className='showTitleContent'></span>
-                  <div>
+                  <div className='showBooking'>
                     <BookingFormContainer spotId={shownSpotId} />
                   </div>
-                <div className='editTitle'>eDit</div>
               </div>
           </div>
           <ul className='spotShowDetailContainer'>
