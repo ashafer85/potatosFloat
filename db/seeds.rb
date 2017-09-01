@@ -13,25 +13,25 @@ user1 = User.create!(
   'username' => 'Tiffany',
   'password' => 'gfgfgf',
   'gender' => 'Female',
-  'age' => '24'
+  'age' => 24
 )
 user2 = User.create!(
   'username' => 'Melissa',
   'password' => 'sissis',
   'gender' => 'Female',
-  'age' => '27'
+  'age' => 27
 )
 user3 = User.create!(
   'username' => 'Garrit',
   'password' => 'friend',
   'gender' => 'Male',
-  'age' => '24'
+  'age' => 24
 )
 user4 = User.create!(
   'username' => 'Guest',
   'password' => 'password',
   'gender' => 'Female',
-  'age' => '29'
+  'age' => 29
 )
 
 Spot.destroy_all
@@ -91,8 +91,8 @@ Spot.create!(
 )
 
 
-40.747967
--73.975812
+# 40.747967
+# -73.975812
 
 #   ActiveRecord::Base.transaction do
 
