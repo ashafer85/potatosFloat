@@ -11,3 +11,7 @@ export const selectOneSpot = (state) => {
     values(state.spot)
   );
 };
+
+export const asArray = ({ spots }) => (
+  Object.keys(spots).map(key => spots[key])
+);

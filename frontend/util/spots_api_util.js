@@ -6,6 +6,14 @@ export const fetchAllSpots = () => {
   });
 };
 
+export const fetchSpots = (data) => {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/spots',
+    data
+  });
+};
+
 export const fetchOneSpot = (id) => {
   return $.ajax({
     method: 'GET',

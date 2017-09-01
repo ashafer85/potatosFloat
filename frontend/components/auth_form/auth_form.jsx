@@ -41,7 +41,7 @@ class AuthForm extends React.Component {
 
   handleGuestLogin(e) {
     e.preventDefault();
-    this.props.login({username: 'guest', password: 'password'}).then( () => {
+    this.props.login({username: 'Guest', password: 'password'}).then( () => {
       this.props.clearErrors();
       this.props.history.push('/');
     });
@@ -51,14 +51,14 @@ class AuthForm extends React.Component {
     let allErrors;
     if (this.props.errors.length !== 0) {
       allErrors =
-        <div className='authErrors'>
+        <ul className='authErrors'>
           { this.props.errors.map((el, idx) => {
             return(
               <li key={idx}> <i className="fa fa-exclamation-triangle" aria-hidden="true"></i> {el} </li>
             )
           }
         )}
-      </div>;
+      </ul>;
     }
 
     let switchAuthForm;
@@ -107,45 +107,43 @@ class AuthForm extends React.Component {
           </li>
         </ul>;
     }
-    
+
     return(
       <div className='authFull'>
-        <div className='authFormContainer'>
-          <div className='authFormHeading'>
-            <div className='title'>{authFormTitle}</div>
-            <Link to='/' className='exit'>
-              <i className="fa fa-times" aria-hidden='true'>
-              </i>
-            </Link>
+          <div className='authFormContainer'>
+            <div className='authFormHeading'>
+                <div className='title'>{authFormTitle}</div>
+                <Link to='/' className='exit'>
+                    <i className="fa fa-times" aria-hidden='true'>
+                    </i>
+                </Link>
+            </div>
+                { allErrors }
+            <form className='authForm' onSubmit={this.handleSubmit}>
+                { joinInputs }
+                <input className='authFormInput'
+                  type='text'
+                  name='username'
+                  value={this.state.username}
+                  placeholder='Username'
+                  onChange={this.handleChange}/>
+                <input className='authFormInput'
+                  type='password'
+                  name='password'
+                  value={this.state.password}
+                  placeholder='Password'
+                  onChange={this.handleChange}/>
+                <input className='authFormSubmit'
+                  type='submit'
+                  value={submitThis}/>
+                <button className='guest authFormSubmit' onClick={this.handleGuestLogin}>GUEST/DEMO LOGIN</button>
+            </form>
+            { switchAuthForm }
           </div>
-          <ul className='authErrors'>
-            { allErrors }
-          </ul>
-          <form className='authForm' onSubmit={this.handleSubmit}>
-              { joinInputs }
-              <input className='authFormInput'
-                type='text'
-                name='username'
-                value={this.state.username}
-                placeholder='Username'
-                onChange={this.handleChange}/>
-              <input className='authFormInput'
-                type='password'
-                name='password'
-                value={this.state.password}
-                placeholder='Password'
-                onChange={this.handleChange}/>
-              <input className='authFormSubmit'
-                type='submit'
-                value={submitThis}/>
-              <button className='guest authFormSubmit' onClick={this.handleGuestLogin}>GUEST/DEMO LOGIN</button>
-          </form>
-          { switchAuthForm }
-        </div>
-        <Link className='authExitTop' to='/'></Link>
-        <Link className='authExitRight' to='/'></Link>
-        <Link className='authExitBottom' to='/'></Link>
-        <Link className='authExitLeft' to='/'></Link>
+          <Link className='authExitTop' to='/'></Link>
+          <Link className='authExitRight' to='/'></Link>
+          <Link className='authExitBottom' to='/'></Link>
+          <Link className='authExitLeft' to='/'></Link>
       </div>
     );
   }

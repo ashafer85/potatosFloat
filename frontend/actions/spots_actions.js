@@ -1,12 +1,11 @@
 import React from 'react';
 import * as APIUtil from '../util/spots_api_util';
 
-import { fetchAllSpots } from '../util/spots_api_util';
+import { fetchAllSpots, fetchSpots, createSpot } from '../util/spots_api_util';
 
 export const RECEIVE_ALL_SPOTS = 'RECEIVE_ALL_SPOTS';
-export const START_LOADING_ALL_SPOTS = 'START_LOADING_ALL_SPOTS';
+export const RECEIVE_SPOTS = 'RECEIVE_SPOTS';
 export const RECEIVE_ONE_SPOT = 'RECEIVE_ONE_SPOT';
-export const START_LOADING_SINGLE_SPOT = 'START_LOADING_SINGLE_SPOT';
 export const RECEIVE_SPOT_ERROR = 'RECEIVE_SPOT_ERROR';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
@@ -15,6 +14,13 @@ export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 export const receiveAllSpots = (payload) => {
   return {
     type: RECEIVE_ALL_SPOTS,
+    spots: payload
+  };
+};
+
+export const receiveSpots = (payload) => {
+  return {
+    type: RECEIVE_SPOTS,
     spots: payload
   };
 };
@@ -47,6 +53,14 @@ export const requestAllSpots = () => (dispatch) => {
   );
 };
 
+export const requestSpots = (ids) => (dispatch) => {
+  // dispatch(startLoadingAllSpots);
+  return APIUtil.fetchSpots(ids).then(
+      (payload) => dispatch(receiveSpots(payload)),
+      (err) => dispatch(receiveSpotError(err))
+  );
+};
+
 export const requestOneSpot = (id) => (dispatch) => {
   // dispatch(startLoadingAllSpots);
   return APIUtil.fetchOneSpot(id).then(
@@ -55,8 +69,8 @@ export const requestOneSpot = (id) => (dispatch) => {
   );
 };
 
-export const processForm = (booking) => (dispatch) => {
-  return APIUtil.createSpot(booking)
+export const processForm = (spot) => (dispatch) => {
+  return APIUtil.createSpot(spot)
     .then(
       (res) => {
         return dispatch(receiveOneSpot(res))

@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  # include PgSearch
-  # multisearchable :against => [:age, :gender]
+  include PgSearch
+  multisearchable :against => [:age, :gender]
 
   validates :username, :password_digest, :session_token, presence: true, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }

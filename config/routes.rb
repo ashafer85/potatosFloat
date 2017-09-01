@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } {
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
-    resources :spots, only: [:index, :show, :new]
+    resources :spots, only: [:index, :show, :create] do
+      collection do
+        get 'search'
+      end
+    end
     resources :bookings, only: [:create, :destroy]
     #FOR NEW SPOT form -> , :new]
     #FOR SPOT EDIT FORM -> , :edit]

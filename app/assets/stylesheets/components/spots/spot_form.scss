@@ -1,0 +1,59 @@
+.spotFormFull {
+  width: 100%;
+  background-color: #f1efea;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Nunito', sans-serif;
+
+  .spotFormContainer {
+    width: 700px;
+    background-color: #ffffff;
+    border-radius: 3px;
+    padding: 20px;
+    margin-top: 15px;
+    h2 {
+      font-size: 28px;
+    }
+    .errors {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      justify-content: center;
+    }
+    .errors > * {
+      background-color: #f1ced0;
+      color: #8f6769;
+      padding: 15px;
+    }
+    .spotForm {
+      display: flex;
+      flex-direction: column;
+      .spotFormInput {
+        display: flex;
+        flex-direction: column;
+        margin-top: 15px;
+        .spotLabel {
+          // background-color: #287fb8;
+          width: 175px;
+          align-items: center;
+        }
+        .spotField {
+          padding: 10px 30px;
+          border: 1px solid #a0aab8;
+          border-radius: 6px;
+        }
+      }
+      .submitContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        .submitSpotForm {
+          padding: 10px 30px;
+          background-color: #db6530;
+          color: white;
+        }
+      }
+    }
+  }
+}

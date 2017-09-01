@@ -43,14 +43,14 @@ Spot.create!(
   'lat' => 40.727837,
   'lng' => -73.995820,
   'sleep_option' => 'Shared Room',
-  'sleep_arrangement' => 'One couch in the living room',
-  'public_trans' => 'three blocks away from the green 6 and four blocks from the orange B D F M',
+  'host_id' => user1.id,
+  # 'sleep_option' => 'Shared Room',
+  # 'sleep_arrangement' => 'One couch in the living room',
+  # 'public_trans' => 'three blocks away from the green 6 and four blocks from the orange B D F M',
   # 'kid' => false,
   # 'pet' => false,
   # 'smoking' => false,
   # 'wheelchair' => false,
-  'host_id' => user1.id,
-  'spot_image_url' => 'couch01.jpg',
 )
 Spot.create!('title' => 'So Many Cacti',
   'description' => 'Two bedroom apartment near Gramercy Park',
@@ -59,9 +59,9 @@ Spot.create!('title' => 'So Many Cacti',
   'lat' => 40.737322,
   'lng' => -73.983413,
   'sleep_option' => 'Public Room',
-  'sleep_arrangement' => 'Large L couch in living room',
-  'roommate_situation' => 'One roommate in other bedroom',
-  'public_trans' => 'three blocks away from the green 4 & 6 and seven street blocks from silver L',
+  # 'sleep_arrangement' => 'Large L couch in living room',
+  # 'roommate_situation' => 'One roommate in other bedroom',
+  # 'public_trans' => 'three blocks away from the green 4 & 6 and seven street blocks from silver L',
   'host_id' => user2.id,
 )
 Spot.create!(
@@ -72,9 +72,9 @@ Spot.create!(
   'lat' => 40.743494,
   'lng' => -73.972652,
   'sleep_option' => 'Private Room',
-  'sleep_arrangement' => 'Large L couch in the living room',
-  'roommate_situation' => 'Three other great roommates, each with separate room',
-  'public_trans' => 'Twelve-minute walk to the green 6 & 4',
+  # 'sleep_arrangement' => 'Large L couch in the living room',
+  # 'roommate_situation' => 'Three other great roommates, each with separate room',
+  # 'public_trans' => 'Twelve-minute walk to the green 6 & 4',
   'host_id' => user3.id,
 )
 Spot.create!(
@@ -84,11 +84,15 @@ Spot.create!(
   'city' => 'New York City',
   'lat' => 40.745200,
   'lng' => -73.994082,
-  'sleep_arrangement' => 'Couch in the former corner office',
-  'roommate_situation' => 'Multiple roommates come a go quietly',
-  'public_trans' => 'Two blocks from the red 1 2 and grean 5',
+  # 'sleep_arrangement' => 'Couch in the former corner office',
+  # 'roommate_situation' => 'Multiple roommates come a go quietly',
+  # 'public_trans' => 'Two blocks from the red 1 2 and grean 5',
   'host_id' => user4.id,
 )
+
+
+40.747967
+-73.975812
 
 #   ActiveRecord::Base.transaction do
 

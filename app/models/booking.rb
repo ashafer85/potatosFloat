@@ -1,6 +1,11 @@
 class Booking < ApplicationRecord
   STATUS_STATES = %w(APPROVED DENIED PENDING).freeze
 
+  include PgSearch
+  multisearchable :against => [:start_date, :end_date]
+  pg_search_scope :search_start_date, :against => [:start_date]
+  pg_search_scope :search_end_date, :against => [:end_date]
+
 
   validates :spot_id, :surfer_id, presence: true
   validates :end_date, :start_date, presence: true

@@ -23,7 +23,6 @@ class ApplicationController < ActionController::Base
 
   def ensure_logged_in
     redirect unless logged_in?
-
   end
 
 end
