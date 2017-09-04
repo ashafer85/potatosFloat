@@ -1,0 +1,53 @@
+
+.bookingFormContainer {
+  padding: 10px;
+  display: flex;
+  border: 1px solid #a0aab8;
+  border-radius: 6px;
+  flex-direction: column;
+  h2 {
+    font-size: 24px;
+    color: #db6530;
+    font-weight: bold;
+  }
+  .bookingForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 10px;
+
+    .bookingDateRange {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      .bookingDate {
+        display: flex;
+        flex-direction: column;
+        .bookingField {
+          padding: 10px 10px;
+          border: 1px solid #a0aab8;
+          border-radius: 6px;
+        }
+      }
+    }
+    .bookingSubmit {
+      margin-top: 10px;
+      width: 400px;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: flex-end;
+      .bookingFormSubmit {
+        padding: 10px 20px;
+        background-color: #db6530;
+        border-radius: 6px;
+        color: white;
+      }
+      .bookingFormSubmit:hover {
+        cursor: pointer;
+        background-color: #579bc7;
+        border-radius: 6px;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,88 @@
+
+.spotsIndexItem {
+  width: 355px;
+  height: 225px;
+  margin: 15px 0px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 3px;
+
+  .spotsIdxItemHeader {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    .spotsIdxItemPic {
+      background: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) ), image-url('favicon_foggy');
+      background-position: center center;
+      background-size: contain;
+      border-top-left-radius: 3px;
+      width: 45%;
+      height: 135px;
+      text-align: center;
+    }
+
+    .spotsIdxItemHeaderContent {
+      width: 55%;
+      padding: 20px 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .spotsIdxItemTitle {
+        padding: 0px 10px 10px 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .spotTitle {
+          font-size: 22px;
+          padding: 0px;
+        }
+        .fa-check-circle {
+          width: 40px;
+          color: #41b866;
+          text-align: center;
+          // align-items: center;
+          // justify-content: center;
+        }
+      }
+      // .spotsIdxItemLinkToReviews {
+      //   width: inherit;
+      //   padding: 0px 10px;
+      // }
+    }
+  }
+
+  .spotsIdxItemDesc {
+    padding: 10px 20px;
+  }
+
+  .moreDetails {
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    .spotsIdxItemMore {
+      display: block;
+      text-align: right;
+      // color: #db6530;
+    }
+    .spotsIdxItemMore:hover {
+      cursor: pointer;
+      color: #db6530;
+    }
+  }
+
+}
+
+// .spotsIndexItem:hover {
+//   cursor: pointer;
+//   box-shadow: 10px 10px 5px rgba(160,170,184,0.1);
+//   background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) );
+//   .spotsIdxItemPic {
+//     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), image-url('favicon_foggy');
+//     background-position: center center;
+//     background-size: contain;
+//   }
+//
+// }

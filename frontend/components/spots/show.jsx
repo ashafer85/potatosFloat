@@ -42,18 +42,15 @@ class SpotShow extends React.Component {
           </div>
           <ul className='spotShowDetailContainer'>
               <div className='spotDetailHeader'>
-                  <div className='spotDetailHeaderTitle'>{ this.props.spot.title }   details:</div>
+                  <div className='spotDesc'>{this.props.spot.description}</div>
               </div>
               <div className='spotDetailBody'>
-                  <ul>
-                    <li> this.props.spot.spot_image_url should come into play eventually</li>
-                    <li>Description: {this.props.spot.description}</li>
+                  <ul className='spotDetailList'>
                     <li>City: {this.props.spot.city}</li>
                     <li>Capacity: {this.props.spot.capacity}</li>
                     <li>Sleep Option: {this.props.spot.sleep_option}</li>
                     <li>lat: {this.props.spot.lat}</li>
                     <li>lng: {this.props.spot.lng}</li>
-                    <li>Host identification #: {this.props.spot.host_id}</li>
                   </ul>
               </div>
           </ul>
@@ -66,6 +63,7 @@ class SpotShow extends React.Component {
 export default SpotShow;
 // <SpotDetail spot={ this.props.spot } />
 
+// <div className='spotDetailHeaderTitle'>{ this.props.spot.title }   details:</div>
 // <li>Sleeping Arrangement: {this.props.spot.sleep_arrangement}</li>
 // <li>Roommate Situation: {this.props.spot.roommate_situation}</li>
 // <li>Public Transportation:{this.props.spot.public_trans}</li>
@@ -73,3 +71,5 @@ export default SpotShow;
 // <li>Pets Allowed:{pets_str}</li>
 // <li>Smoking Allowed: {smoking_str}</li>
 // <li>Wheelchair Acessible: {wheelchair_str}</li>
+
+// <li>Host identification #: {this.props.spot.host_id}</li>

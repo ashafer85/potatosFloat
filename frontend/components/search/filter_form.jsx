@@ -12,7 +12,10 @@ const FilterForm = ( stuff ) => {
   return (
   <div className='filterFull'>
       <div className='filterContainer'>
-          <div className="filterTitle">Apply Filters:</div>
+          <div className="filterTitle">Search Filters:</div>
+          <div className='tempRefreshToClearFilters'>
+            (Refresh page to clear filters)
+          </div>
           <form className='spotSearchForm'>
               <div className='searchItem'>
                   <label className='searchLabel'> # of Travelers</label>
@@ -35,7 +38,6 @@ const FilterForm = ( stuff ) => {
                   <select
                       className='selectFilter'
                       type='string'
-                      defaultValue='Public Room'
                       value={stuff.sleep_option}
                       onChange={handleChange('sleep_option')}>
                       <option value='Public Room'>Public Room</option>
@@ -46,7 +48,7 @@ const FilterForm = ( stuff ) => {
               </div>
 
               <div className='spotsSearchButtons'>
-                  <input className='submitSearch' type='submit' value='Search'/>
+                  <input className='submitSearch' type='submit' value=''/>
               </div>
           </form>
       </div>

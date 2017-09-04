@@ -41,25 +41,34 @@ class BookingForm extends React.Component {
       <div className='bookingFormContainer'>
           <h2> Book This Spot: </h2>
           <form className='bookingForm' onSubmit={this.handleSubmit}>
-              <label className='bookingField'>Start date</label>
-              <input
-                type='date'
-                value={this.state.start_date}
-                onChange={this.update('start_date')}
-                className="bookingField"
-              />
-              <label className='bookingField'>End date</label>
-              <input
-                type='date'
-                value={this.state.end_date}
-                onChange={this.update('end_date')}
-                className="bookingField"
-              />
-              <input
-                type='submit'
-                value='Create Booking'
-                className='bookingFormSubmit'
-              />
+              <div className='bookingDateRange'>
+                  <div className='bookingDate'>
+                      <label className='bookingLabel'>Start date</label>
+                      <input
+                        type='date'
+                        value={this.state.start_date}
+                        onChange={this.update('start_date')}
+                        className="bookingField"
+                        />
+                  </div>
+                  <div className='bookingDate'>
+                      <label className='bookingLabel'>End date</label>
+                      <input
+                        type='date'
+                        value={this.state.end_date}
+                        onChange={this.update('end_date')}
+                        className="bookingField"
+                        />
+                  </div>
+              </div>
+
+              <div className='bookingSubmit'>
+                <input
+                  type='submit'
+                  value='Request Booking'
+                  className='bookingFormSubmit'
+                  />
+              </div>
           </form>
       </div>
     );

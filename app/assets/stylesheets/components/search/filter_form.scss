@@ -5,9 +5,12 @@
   flex-direction: column;
   align-items: center;
   font-family: 'Nunito', sans-serif;
+
   .filterContainer {
     width: 700px;
     background-color: #ffffff;
+    // background-color: blue;
+
     border-radius: 3px;
     padding: 20px;
     margin-top: 15px;
@@ -22,17 +25,20 @@
     .spotSearchForm {
       width: 100%;
       display: flex;
-
+      flex-direction: row;
+      flex-wrap: wrap;
       .searchItem {
+        padding: 10px;
+        // background-color: pink;
         display: flex;
         flex-direction: column;
-
         .searchLabel {
-          width: 175px;
+          width: 200px;
           align-items: center;
         }
         .selectFilter {
-          padding: 10px 30px;
+          // background-color: #579bc7;
+          padding: 10px 20px;
           border: 1px solid #a0aab8;
           border-radius: 6px;
         }

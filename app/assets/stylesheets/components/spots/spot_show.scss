@@ -15,7 +15,8 @@
     width: 740px;
     background-color: #ffffff;
     border-radius: 3px;
-    padding: 20px;
+    padding: 10px 20px;
+    margin-top: 20px;
     padding-bottom: 0px;
     display: flex;
     flex-direction: row;
@@ -33,7 +34,7 @@
                   );
       background-position: center center;
       background-size: cover;
-      width: 333px;
+      width: 300px;
       height: 222px;
       border-radius: 6px;
       display: flex;
@@ -53,9 +54,9 @@
       margin-top: 15px;
       margin-left: 20px;
       // background-color: inherit;
-      background-color: #41b866;
-      width: 387px;
-      height: 222px;
+      // background-color: #41b866;
+      width: 420px;
+      // height: 222px;
       border-radius: 6px;
       display: flex;
       // flex-wrap: wrap;
@@ -63,11 +64,13 @@
       justify-content: space-between;
       // align-items: center;
       .showTitle {
-        margin: 10px 30px;
+        padding: 5px 20px;
         background-color: #1d6696;
+        color: #ffffff;
+        // border: 1px solid #a0aab8;
         border-radius: 6px;
-        width: 327px;
-        height: 70px;
+        width: 382px;
+        height: 40px;
         font-size: 32px;
         text-align: center;
       }
@@ -100,13 +103,12 @@
     flex-wrap: wrap;
     justify-content: space-between;
     .spotDetailHeader {
-      width: 100%;
-      // margin: 10px 30px;
+      font-size: 18px;
+      padding: 10px 20px;
+      width: 700px;
       background-color: #1d6696;
+      color: white;
       border-radius: 6px;
-      height: 70px;
-      font-size: 22px;
-      text-align: left;
       display: flex;
       flex-direction: row;
       align-items: flex-start;
@@ -126,10 +128,11 @@
       border-radius: 6px;
       font-size: 16px;
       text-align: left;
-      ul {
+      .spotDetailList {
         width: inherit;
+        padding: 5px 20px 10px 20px;
         li {
-          margin-left: 40px;
+          padding: 3px 0px;
         }
       }
     }// .spotDetailBody

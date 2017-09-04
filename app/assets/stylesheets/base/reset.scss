@@ -1,7 +1,7 @@
 html, body, header, nav, h1, a,
 ul, li, strong, main, button, i,
 section, img, div, h2, p, form, input,
-fieldset, label, textarea,
+fieldset, label, textarea, select, option,
 span, article, footer, time, small, select {
   margin: 0;
   padding: 0;
@@ -26,6 +26,7 @@ img {
   height: auto;
 }
 
+
 input[type="password"],
 input[type="email"],
 input[type="text"],
@@ -38,6 +39,12 @@ button {
   */
   -webkit-appearance: none;
   -moz-appearance: none;
+  appearance: none;
+}
+
+select {
+  -webkit-appearance: none;
+  // -moz-appearance: none;
   appearance: none;
 }
 
