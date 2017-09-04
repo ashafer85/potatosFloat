@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import FilterForm from './filter_form';
 import SpotSearchIndex from './spot_search_index';
 
@@ -43,12 +42,3 @@ class Search extends React.Component {
 }
 
 export default Search;
-
-
-// <SpotSearchIndex spots={spots} />
-
-
-
-
-// 40.747967
-// -73.975812

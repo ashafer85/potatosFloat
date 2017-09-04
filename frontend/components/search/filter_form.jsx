@@ -1,11 +1,10 @@
 import React from 'react';
 
 
-const FilterForm = ( stuff ) => {
+const FilterForm = ( filterProps ) => {
   const handleChange = (filter) => e => {
-
     return(
-      stuff.updateFilter(filter, e.currentTarget.value)
+      filterProps.updateFilter(filter, e.currentTarget.value)
     );
   };
 
@@ -23,7 +22,7 @@ const FilterForm = ( stuff ) => {
                       className='selectFilter'
                       type='integer'
                       defaultValue='1'
-                      value={stuff.capacity}
+                      value={filterProps.capacity}
                       onChange={handleChange('capacity')}>
                       <option value='Any'>Any</option>
                       <option value='1'>1</option>
@@ -38,7 +37,7 @@ const FilterForm = ( stuff ) => {
                   <select
                       className='selectFilter'
                       type='string'
-                      value={stuff.sleep_option}
+                      value={filterProps.sleep_option}
                       onChange={handleChange('sleep_option')}>
                       <option value='Public Room'>Public Room</option>
                       <option value='Private Room'>Private Room</option>
