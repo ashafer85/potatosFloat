@@ -45,14 +45,22 @@
         }
       }
       .submitContainer {
+        padding-top: 15px;
         display: flex;
         flex-direction: row;
         align-items: flex-end;
         .submitSpotForm {
           padding: 10px 30px;
+          border-radius: 4px;
           background-color: #db6530;
           color: white;
         }
+        
+        .submitSpotForm:hover {
+          background-color: #287fb8;
+          color: #db6530;
+        }
+
       }
     }
   }

@@ -1,7 +1,7 @@
 
 .spotsIndexItem {
   width: 355px;
-  height: 225px;
+  height: 250px;
   margin: 15px 0px;
   background-color: #ffffff;
   display: flex;
@@ -15,9 +15,10 @@
     flex-wrap: nowrap;
 
     .spotsIdxItemPic {
-      background: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) ), image-url('favicon_foggy');
-      background-position: center center;
-      background-size: contain;
+      // background: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) ), image-url('favicon_foggy');
+      background: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3) ), image-url('couches/couch04');
+      background-position: top;
+      background-size: cover;
       border-top-left-radius: 3px;
       width: 45%;
       height: 135px;
@@ -26,13 +27,14 @@
 
     .spotsIdxItemHeaderContent {
       width: 55%;
+      height: 95px;
       padding: 20px 10px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
 
       .spotsIdxItemTitle {
-        padding: 0px 10px 10px 10px;
+        padding: 0px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -41,7 +43,7 @@
           padding: 0px;
         }
         .fa-check-circle {
-          width: 40px;
+          width: 30px;
           color: #41b866;
           text-align: center;
           // align-items: center;
@@ -63,14 +65,20 @@
     padding: 10px 20px;
     display: flex;
     flex-direction: row-reverse;
+
+
     .spotsIdxItemMore {
       display: block;
       text-align: right;
+      padding: 0px 10px;
+      border: solid 1px black;
+      border-radius: 4px;
       // color: #db6530;
     }
     .spotsIdxItemMore:hover {
       cursor: pointer;
       color: #db6530;
+      border: solid 1px #db6530;
     }
   }
 

@@ -157,7 +157,7 @@ class SpotForm extends React.Component {
                       <select className='spotField'
                           type='string'
                           name='sleep_option'
-                          defaultValue='Public Room'
+                          defaultValue={this.state.sleep_option}
                           onChange={this.update('sleep_option')}>
                           <option value='Public Room'>Public Room</option>
                           <option value='Shared Room'>Shared Room</option>

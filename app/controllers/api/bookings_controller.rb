@@ -22,6 +22,21 @@ class Api::BookingsController < ApplicationController
     render json: @booking
   end
 
+  def index
+    @bookings = Booking.all
+    render :index
+  end
+
+  # def create
+  #   @spot = Spot.new(spot_params)
+  #   @spot.host_id = current_user.id
+  #   if @spot.save
+  #     render :show
+  #   else
+  #     render json: [@spot.errors.full_messages], status: 422
+  #   end
+  # end
+
   private
 
   def current_booking

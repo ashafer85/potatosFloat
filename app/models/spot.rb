@@ -9,7 +9,6 @@ class Spot < ApplicationRecord
   # pg_search_scope :search_by_wheelchair, :against => [:wheelchair]
 
 
-
   validates :title, :description, :capacity, presence: true
   validates :city, :lat, :lng, presence: true
   validates :host_id, presence: true, uniqueness: true
