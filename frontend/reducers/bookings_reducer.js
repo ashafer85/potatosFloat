@@ -11,18 +11,21 @@ const bookingsReducer = (state = {}, action) => {
 
     case RECEIVE_HOST_BOOKINGS:
       const bookingsHost = action.bookings;
-      return merge({}, state, { bookings }, { errors });
+      return merge({}, state, { bookingsHost }, { errors });
+
     case RECEIVE_SURFER_BOOKINGS:
       const bookingsSurfer = action.bookings;
-      return merge({}, state, {bookingsSurfer}, { errors });
+      return merge({}, state, { bookingsSurfer }, { errors });
 
     case RECEIVE_ERRORS:
       const errors = action.errors;
       return merge({}, state, { booking }, { errors });
+
     case CLEAR_ERRORS:
       const newState = merge({},state)
       newState.errors = [];
       return newState;
+      
     default:
       return state;
   };
