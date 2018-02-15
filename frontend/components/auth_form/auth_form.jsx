@@ -54,7 +54,10 @@ class AuthForm extends React.Component {
         <ul className='authErrors'>
           { this.props.errors.map((el, idx) => {
             return(
-              <li key={idx}> <i className="fa fa-exclamation-triangle" aria-hidden="true"></i> {el} </li>
+              <li key={idx}>
+                <i className="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                {el}
+              </li>
             )
           }
         )}

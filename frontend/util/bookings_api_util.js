@@ -9,20 +9,37 @@ export const createBooking = (booking) => {
 export const destroyBooking = (booking) => {
   return $.ajax({
     method: 'DELETE',
-    url: `/api/session/${booking.id}`,
+    url: `/api/bookings/${booking.id}`,
   });
 };
 
-export const requestHostBookings = (host) => {
+export const requestHostBookings = (spot) => {
   return $.ajax({
     method: 'GET',
-    url: `api/bookings/${host.spot.id}`,
+    url: `api/spots/${spot.id}/bookings`,
   });
 };
 
-export const requestSurferBookings = (surfer_id) => {
+export const requestSurferBookings = (surfer) => {
   return $.ajax({
     method: 'GET',
-    url: `api/bookings/${host.spot.id}`,
+    url: `api/users/${surfer.spot.host_id}/bookings`,
+  });
+};
+
+// UpdateHost SHOULD DO DIFFERENT THINGS than UpdateSurfer ??????
+
+export const requestUpdateHostBooking = (booking) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: `api/bookings/${booking.id}`,
+    data: { booking },
+  });
+};
+export const requestUpdateSurferBooking = (booking) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: `api/bookings/${booking.id}`,
+    data: { booking },
   });
 };

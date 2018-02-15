@@ -28,6 +28,9 @@ class UserDrop extends React.Component {
               <li className='listItem'>
                   { mySpotPath }
               </li>
+              <li className='listItem'>
+                  <Link className='linkToBookings' to='/bookings'> Bookings </Link>
+              </li>
               <li className='listItemLast'>
                   <button onClick={this.props.logout}>Log Out</button>
               </li>

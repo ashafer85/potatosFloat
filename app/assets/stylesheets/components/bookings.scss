@@ -1,0 +1,69 @@
+.bookingsContainer {
+  width: 100%;
+  // padding: 30px;
+  background-color: #f1efea;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Nunito', sans-serif;
+
+  .myBookingsContainer {
+    width: 700px;
+    // background-color: #ffffff;
+    border-radius: 3px;
+    padding: 20px;
+
+    .bookingItem {
+      background-color: #ffffff;
+      margin: 20px 0px;
+      padding: 5px 30px;
+      border-radius: 3px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .bInfo {
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+
+        .bDays {
+        }
+        .bStatus {
+        }
+      }
+      .bookingDate {
+        margin-right: 20px;
+      }
+      .statusUpdate {
+        margin: 0px 30px 0px 20px;
+        border-radius: 5px;
+        padding: 5px 20px;
+        text-align: center;
+        font-family: 'Nunito', sans-serif;
+      }
+      .yes {
+        color: #41b866;
+        border: 1px solid #41b866;
+      }
+      .yes:hover {
+        color: white;
+        background-color: #41b866;
+        border: 1px solid #41b866;
+      }
+      .no {
+        color: #a51c30;
+        border: 1px solid #a51c30;
+      }
+      .no:hover {
+        color: white;
+        background-color: #a51c30;
+        border: 1px solid #a51c30;
+      }
+
+      .bSurfer {
+        margin-right: 20px;
+      }
+    }
+  }
+}

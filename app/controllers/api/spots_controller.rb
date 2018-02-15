@@ -22,7 +22,6 @@ class Api::SpotsController < ApplicationController
     end
   end
 
-
   def search
     # Generate the pg_search train from spot_params
     @spots = Spot.all

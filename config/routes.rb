@@ -4,14 +4,22 @@ Rails.application.routes.draw do
   root to: 'static_pages#root'
 
   namespace :api, defaults: { format: :json } {
-    resources :users, only: [:create]
+
+    resources :users, only: [:create] do
+      resources :bookings, only: [:index]
+    end
+
     resource :session, only: [:create, :destroy]
+
     resources :spots, only: [:index, :show, :update, :create] do
       collection do
         get 'search'
       end
+      resources :bookings, only: [:index]
     end
-    resources :bookings, only: [:create, :index, :show, :destroy]
+
+    resources :bookings, only: [:show, :update, :destroy]
+
     #FOR NEW SPOT form -> , :new]
     #FOR SPOT EDIT FORM -> , :edit]
     #FOR DELETING SPOT -> , :destroy]

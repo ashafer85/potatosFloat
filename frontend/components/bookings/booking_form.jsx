@@ -17,6 +17,10 @@ class BookingForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors()
+  }
+
   update(property) {
     return(
       (e) => this.setState({
@@ -27,19 +31,35 @@ class BookingForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    debugger
     const booking = merge({}, this.state);
     // processForm returns a promise... thus qualifying the .then
     this.props.processForm(booking).then( () => {
       this.props.clearErrors();
-      this.props.history.push(`/spots/${this.state.spot_id}`);
+      // this.props.history.push(`/spots/${this.state.spot_id}`);
     });
   }
 
-  render () {
+  render() {
+    let bookingFormErrors;
+    if (this.props.errors && this.props.errors.length !== 0) {
+      bookingFormErrors =
+        <ul className='bookingFormErrors'>
+          {this.props.errors.map((el, idx) => {
+            return(
+              <li key={idx}>
+                <i className="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                {el}
+              </li>
+            )
+          })}
+        </ul>;
+    }
 
     return(
       <div className='bookingFormContainer'>
           <h2> Book This Spot: </h2>
+            { bookingFormErrors }
           <form className='bookingForm' onSubmit={this.handleSubmit}>
               <div className='bookingDateRange'>
                   <div className='bookingDate'>

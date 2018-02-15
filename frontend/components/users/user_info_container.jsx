@@ -1,19 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import BookingForm from './booking_form';
-import { processForm, clearErrors } from '../../actions/bookings_actions';
+import UerInfo from './user_info';
+import { requestUserInfo } from '../../actions/bookings_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    currentUser: state.session.currentUser,
-    errors: state.bookings.errors,
+    
   };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
+  // Host Bookings pulled based on Spot ID
+  // Surfer Bookings pulled based on User ID
   return {
-    processForm: (booking) => dispatch(processForm(booking)),
+    requestHostBookings: (spot) => dispatch(requestHostBookings(spot)),
     clearErrors: () => dispatch(clearErrors())
   };
 };
@@ -21,4 +22,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps,
-)(BookingForm));
+)(MyBookings));

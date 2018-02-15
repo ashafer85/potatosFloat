@@ -1,5 +1,5 @@
 class Booking < ApplicationRecord
-  STATUS_STATES = %w(APPROVED DENIED PENDING).freeze
+  STATUS_STATES = %w[APPROVED DENIED PENDING].freeze
 
   include PgSearch
   multisearchable :against => [:start_date, :end_date]
@@ -25,7 +25,7 @@ class Booking < ApplicationRecord
     through: :spot,
     source: :host
 
-  after_initialize :assign_pending
+  # after_initialize :assign_pending # ;) remember this bug
 
 
   def approve!
@@ -49,7 +49,12 @@ class Booking < ApplicationRecord
 
   def deny!
     self.status = 'DENIED'
-    self.save!
+    debugger
+    if self.save
+      debugger
+    else
+      debugger
+    end
   end
 
   private
@@ -66,11 +71,11 @@ class Booking < ApplicationRecord
   end
 
   def overlapping_approved_requests
-    overlapping_bookings.where('status = \'APPROVED\'')
+    overlapping_requests.where('status = \'APPROVED\'')
   end
 
   def overlapping_pending_requests
-    overlapping_bookings.where('status = \'PENDING\'')
+    overlapping_requests.where('status = \'PENDING\'')
   end
 
   def start_must_come_before_end

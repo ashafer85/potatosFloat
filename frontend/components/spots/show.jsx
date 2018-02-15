@@ -17,7 +17,6 @@ class SpotShow extends React.Component {
 
   render() {
     const shownSpotId = this.props.match.params.id;
-    debugger
 
     // let kids_str;
     // if (this.props.spot.kid === false) { kids_str = 'No' } else { kids_str = 'Yes' };

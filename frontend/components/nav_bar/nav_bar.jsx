@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import UserDropContainer from './user_drop_container';
 import LandingPage from '../landing_page/landing_page';
-// import { swithcUserDropStatus } from '../../actions/ui_actions';
+import { swithcUserDropStatus, closeUserDropStatus } from '../../actions/ui_actions';
 
 class NavBar extends React.Component {
 
@@ -14,10 +14,15 @@ class NavBar extends React.Component {
       password: ''
     };
     this.handleDropChange = this.handleDropChange.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
 
   handleDropChange() {
     this.props.switchUserDropStatus(this.props.userDropStatus)
+  }
+
+  handleClick() {
+    this.props.closeUserDropStatus()
   }
 
   render () {

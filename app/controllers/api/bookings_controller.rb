@@ -1,11 +1,7 @@
 class Api::BookingsController < ApplicationController
-  def approve
-    current_booking.approve!
-    render json: current_booking
-  end
-
   def create
     @booking = current_user.bookings.new(booking_params)
+    @booking.status = "PENDING"
     if @booking.save
       render json: @booking
     else
@@ -13,29 +9,35 @@ class Api::BookingsController < ApplicationController
     end
   end
 
-  def deny
-    current_booking.deny!
-  end
-
   def new
     @booking = Booking.new
     render json: @booking
   end
 
+  def update
+    @booking = Booking.find(params['id'])
+
+    if booking_params['status'] == 'APPROVED'
+      @booking.approve!
+    else
+      @booking.deny!
+    end
+    if @booking.save!
+      render json: @booking
+    else
+      render json: @booking.errors.full_messages
+    end
+  end
+
   def index
-    @bookings = Booking.all
+    if params[:user_id]
+      @bookings = Booking.where(surfer_id: params[:user_id])
+    elsif params[:spot_id]
+      @bookings = Booking.where(spot_id: params[:spot_id])
+    end
     render :index
   end
 
-  # def create
-  #   @spot = Spot.new(spot_params)
-  #   @spot.host_id = current_user.id
-  #   if @spot.save
-  #     render :show
-  #   else
-  #     render json: [@spot.errors.full_messages], status: 422
-  #   end
-  # end
 
   private
 
@@ -49,6 +51,6 @@ class Api::BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:spot_id, :surfer_id, :end_date, :start_date, :status)
+    params.require(:booking).permit(:id, :spot_id, :surfer_id, :end_date, :start_date, :status)
   end
 end
