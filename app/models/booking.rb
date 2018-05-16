@@ -49,11 +49,8 @@ class Booking < ApplicationRecord
 
   def deny!
     self.status = 'DENIED'
-    debugger
     if self.save
-      debugger
     else
-      debugger
     end
   end
 

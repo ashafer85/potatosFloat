@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { withRouter } from 'react-router';
 import { merge } from 'lodash';
 import HostBookingItem from './host_booking_item';
-import SurferBookingItem from './surfer_booking_item';
+import SurferBookingItemContainer from './surfer_booking_item_container';
 
 class MyBookings extends React.Component {
 
@@ -11,6 +11,8 @@ class MyBookings extends React.Component {
     super(props);
     this.approveBooking = this.approveBooking.bind(this);
     this.denyBooking = this.denyBooking.bind(this);
+    this.editSBDateRange = this.editSBDateRange.bind(this);
+    this.deleteSurferBooking = this.deleteSurferBooking.bind(this);
   }
 
   componentDidMount() {
@@ -26,21 +28,19 @@ class MyBookings extends React.Component {
     booking.status = 'APPROVED';
     this.props.requestUpdateHostBooking(booking);
   }
-
   denyBooking(booking) {
     booking.status = 'DENIED';
     this.props.requestUpdateHostBooking(booking);
   }
 
-  editSurferBookingStartDate(booking) {
-    booking.startDate;
+  // Q4Matt: should I take in two other arguments (start_date, end_date)
+  //         then just
+  editSBDateRange(booking, newStart, newEnd) {
+    debugger
+    booking.start_date = newStart;
+    booking.end_date = newEnd;
     this.props.requestUpdateSurferBooking(booking);
   }
-  editSurferBookingEndDate(booking) {
-    booking.end_date;
-    this.props.requestUpdateSurferBooking(booking);
-  }
-
   deleteSurferBooking(booking) {
     this.props.requestDeleteSurferBooking(booking);
   }
@@ -96,9 +96,7 @@ class MyBookings extends React.Component {
 
     const surferBookingItems = allSurferBookings.map( (booking) => {
       return (
-        <SurferBookingItem
-          booking = { booking }
-          key = { booking.id } />
+        <SurferBookingItemContainer key={booking.id} findMe={booking.id} />
       );
     })
 

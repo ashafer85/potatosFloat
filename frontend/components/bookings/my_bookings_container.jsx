@@ -9,6 +9,7 @@ const mapStateToProps = (state, ownProps) => {
     current_user: state.session.currentUser,
     hostBookings: state.bookings.hostBookings,
     surferBookings: state.bookings.surferBookings,
+    currentBooking: state.bookings.surferBookings,
     errors: state.bookings.errors,
   };
 };
@@ -20,7 +21,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     requestHostBookings: (spot) => dispatch(requestHostBookings(spot)),
     requestSurferBookings: (current_user) => dispatch(requestSurferBookings(current_user)),
     requestUpdateHostBooking: (booking) => dispatch(requestUpdateHostBooking(booking)),
-    requestUpdateSurferBooking: (booking) => dispatch(requestUpdateSurferBooking(booking)),
     clearErrors: () => dispatch(clearErrors())
   };
 };

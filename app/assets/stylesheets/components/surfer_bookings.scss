@@ -1,0 +1,83 @@
+
+.surferBookingItemContainer {
+  background-color: #f1efea;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+
+  .sBItem {
+    background-color: #ffffff;
+    margin: 20px 0px 0px 0px;
+    padding: 5px 30px;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .sBInfo {
+      width: 200px;
+      display: flex;
+      flex-direction: column;
+      .sBDays {
+      }
+      .sBStatus {
+      }
+    }
+    .sBDate {
+      background-color: orange;
+      margin-right: 20px;
+
+    }
+    .sBSpot {
+      background-color: gold;
+    }
+  }
+
+  .surferBUpdateOptions {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    background-color: maroon;
+
+    .surferBUpdate {
+      color: #41b866;
+      border: 1px solid #41b866;
+      margin: 0px 0px 0px 20px;
+      border-radius: 5px;
+      padding: 5px 20px;
+      text-align: center;
+      font-family: 'Nunito', sans-serif;
+    }
+    button:hover {
+      background-color: #e1e2e4;
+      color: #db6530;
+      cursor: pointer;
+    }
+
+    .surferBDestroy {
+      color: #a51c30;
+      border: 1px solid #a51c30;
+      margin: 0px 30px 0px 20px;
+      border-radius: 5px;
+      padding: 5px 20px;
+      text-align: center;
+      font-family: 'Nunito', sans-serif;
+    }
+    .surferBDestroy:hover {
+
+    }
+  }
+
+  .bookingFormUpdate {
+    background-color: silver;
+
+    .bookingDate {
+      margin: 0px 30px 0px 20px;
+      border-radius: 5px;
+      padding: 5px 20px;
+      text-align: center;
+      font-family: 'Nunito', sans-serif;
+    }
+  }
+
+}

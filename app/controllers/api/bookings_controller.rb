@@ -22,6 +22,7 @@ class Api::BookingsController < ApplicationController
     else
       @booking.deny!
     end
+
     if @booking.save!
       render json: @booking
     else

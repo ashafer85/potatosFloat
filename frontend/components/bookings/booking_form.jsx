@@ -13,7 +13,7 @@ class BookingForm extends React.Component {
       end_date: '',
       spot_id: this.props.spotId,
     };
-
+    debugger
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -31,13 +31,21 @@ class BookingForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger
     const booking = merge({}, this.state);
     // processForm returns a promise... thus qualifying the .then
     this.props.processForm(booking).then( () => {
       this.props.clearErrors();
       // this.props.history.push(`/spots/${this.state.spot_id}`);
     });
+  }
+
+  handleUpdate(e) {
+    e.preventDefeult();
+    const booking = merge({}, this.state);
+    this.props.requestUpdateSurferBooking(booking).then( () => {
+      this.props.clearErrors();
+    })
+
   }
 
   render() {
@@ -55,6 +63,7 @@ class BookingForm extends React.Component {
           })}
         </ul>;
     }
+
 
     return(
       <div className='bookingFormContainer'>

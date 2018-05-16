@@ -30,7 +30,7 @@ const bookingsReducer = (state = {}, action) => {
       return merge({}, state, { booking }, { errors });
 
     case CLEAR_ERRORS:
-      const newState = merge({},state)
+      const newState = merge( {} , state)
       newState.errors = [];
       return newState;
 
